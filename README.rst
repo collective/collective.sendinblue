@@ -16,7 +16,7 @@ Then, you can add a portlet to allow visitors to subscribe to one of your list (
 Features
 --------
 
-- multiple account support : you can link more than one Sendinblue account to your site
+- multiple accounts support : you can link more than one Sendinblue account to your site
 - archive link : you can provide an URL that points to archives (that you manage manually)
 
 
