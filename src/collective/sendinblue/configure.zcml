@@ -24,10 +24,6 @@
       factory=".sendinblue.SendinblueAPI" />
 
   <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="collective.sendinblue-hiddenprofiles" />
-
-  <utility
       component=".vocabularies.available_lists"
       name="collective.sendinblue.vocabularies.AvailableLists"
       provides="zope.schema.interfaces.IVocabularyFactory" />
