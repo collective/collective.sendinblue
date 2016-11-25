@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0a1 (unreleased)
-------------------
+1.0 (2016-11-25)
+----------------
 
 - Initial release.
   [laulaz]
