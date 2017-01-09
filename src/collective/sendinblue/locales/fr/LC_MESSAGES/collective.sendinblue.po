@@ -173,7 +173,7 @@ msgstr "Valeur"
 
 #: ../browser/portlet.py:156
 msgid "You are successfully subscribed to the newsletter !"
-msgstr "Vous êtes inscrits à la newsletter !"
+msgstr "Vous êtes inscrit à la newsletter !"
 
 #: ../browser/controlpanel.pt:91
 msgid "Zip:"
