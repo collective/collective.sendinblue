@@ -41,7 +41,7 @@ setup(
         'Products.GenericSetup>=1.8.2',
         'plone.api',
         'setuptools',
-        'Sendinblue==2.0.4',
+        'Sendinblue',
     ],
     extras_require={
         'test': [
