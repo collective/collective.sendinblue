@@ -19,6 +19,15 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:upgradeStep
+      source="1000"
+      destination="1001"
+      title="Installs plone.formwidget.captcha dependency"
+      description=""
+      profile="collective.sendinblue:default"
+      handler=".upgrades.install_captcha"
+      />
+
   <utility
       provides="collective.sendinblue.interfaces.ISendinblueAPI"
       factory=".sendinblue.SendinblueAPI" />

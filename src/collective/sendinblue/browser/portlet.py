@@ -3,12 +3,15 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from plone.app.portlets.portlets import base
+from plone.formwidget.captcha.validator import CaptchaValidator
+from plone.formwidget.captcha.widget import CaptchaFieldWidget
 from plone.memoize.compress import xhtml_compress
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.z3cform import z2
 from plone.z3cform.interfaces import IWrappedForm
 from z3c.form import button
 from z3c.form import field
+from z3c.form import validator
 from z3c.form.form import Form
 from z3c.form.interfaces import IFormLayer
 from zope import schema
@@ -131,9 +134,18 @@ class EditForm(base.EditForm):
         super(EditForm, self).update()
 
 
+class Captcha(object):
+    subject = u""
+    captcha = u""
+
+    def __init__(self, context):
+        self.context = context
+
+
 class PortletSubscribeForm(Form):
     fields = field.Fields(INewsletterSubscribe)
     ignoreContext = True
+    fields['captcha'].widgetFactory = CaptchaFieldWidget
 
     @button.buttonAndHandler(_('Subscribe'), name='subscribe')
     def handle_subscribe(self, action):
@@ -165,3 +177,8 @@ class PortletSubscribeForm(Form):
             )
         url = self.request.ACTUAL_URL
         self.request.response.redirect(url)
+
+validator.WidgetValidatorDiscriminators(
+    CaptchaValidator,
+    field=INewsletterSubscribe['captcha']
+)

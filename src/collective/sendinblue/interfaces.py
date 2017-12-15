@@ -32,6 +32,12 @@ class INewsletterSubscribe(Interface):
         required=True,
         constraint=validate_email)
 
+    captcha = schema.TextLine(
+        title=u"Captcha",
+        description=u"",
+        required=True
+    )
+
 
 class ISendinblueAPI(Interface):
     """Sendinblue API"""
