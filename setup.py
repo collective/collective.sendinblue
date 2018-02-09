@@ -42,6 +42,7 @@ setup(
         'plone.api',
         'setuptools',
         'Sendinblue',
+        'plone.formwidget.recaptcha',
     ],
     extras_require={
         'test': [

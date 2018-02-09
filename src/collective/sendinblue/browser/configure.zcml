@@ -24,6 +24,11 @@
     editview=".portlet.EditForm"
     />
 
+  <adapter
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      provides="..interfaces.INewsletterSubscribe"
+      factory=".portlet.Captcha" />
+
   <!-- Resource directory for images -->
   <browser:resourceDirectory
     name="collective.sendinblue.images"

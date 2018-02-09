@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.sendinblue\n"
 
-#: ../interfaces.py:72
+#: ../interfaces.py:78
 msgid "API Key"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Account key:"
 msgstr ""
 
-#: ../browser/portlet.py:104
+#: ../browser/portlet.py:109
 msgid "Add Sendinblue Portlet"
 msgstr ""
 
@@ -34,11 +34,11 @@ msgstr ""
 msgid "Address:"
 msgstr ""
 
-#: ../browser/portlet.py:162
+#: ../browser/portlet.py:185
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr ""
 
-#: ../browser/portlet.py:51
+#: ../browser/portlet.py:56
 msgid "Archive link"
 msgstr ""
 
@@ -58,11 +58,11 @@ msgstr ""
 msgid "Date created"
 msgstr ""
 
-#: ../browser/portlet.py:39
+#: ../browser/portlet.py:44
 msgid "Description of the rendered portlet"
 msgstr ""
 
-#: ../browser/portlet.py:124
+#: ../browser/portlet.py:129
 msgid "Edit Sendinblue Portlet"
 msgstr ""
 
@@ -90,11 +90,11 @@ msgstr ""
 msgid "Last name:"
 msgstr ""
 
-#: ../browser/portlet.py:52
+#: ../browser/portlet.py:57
 msgid "Link to a page where you store previous newsletters"
 msgstr ""
 
-#: ../browser/portlet.py:44
+#: ../browser/portlet.py:49
 msgid "List"
 msgstr ""
 
@@ -106,11 +106,15 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../browser/portlet.py:38
+#: ../browser/portlet.py:161
+msgid "Please check the captcha to prove you're a human"
+msgstr ""
+
+#: ../browser/portlet.py:43
 msgid "Portlet description"
 msgstr ""
 
-#: ../browser/portlet.py:32
+#: ../browser/portlet.py:37
 msgid "Portlet header"
 msgstr ""
 
@@ -118,7 +122,7 @@ msgstr ""
 msgid "SMS plan:"
 msgstr ""
 
-#: ../browser/portlet.py:45
+#: ../browser/portlet.py:50
 msgid "Select list to enable subscriptions to"
 msgstr ""
 
@@ -126,7 +130,7 @@ msgstr ""
 msgid "Sendinblue"
 msgstr ""
 
-#: ../interfaces.py:64
+#: ../interfaces.py:70
 msgid "Sendinblue API Key(s)"
 msgstr ""
 
@@ -150,15 +154,15 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: ../browser/portlet.py:138
+#: ../browser/portlet.py:152
 msgid "Subscribe"
 msgstr ""
 
-#: ../browser/portlet.py:105
+#: ../browser/portlet.py:110
 msgid "This portlet displays a subscription form for a Sendinblue newsletter."
 msgstr ""
 
-#: ../browser/portlet.py:33
+#: ../browser/portlet.py:38
 msgid "Title of the rendered portlet"
 msgstr ""
 
@@ -170,7 +174,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: ../browser/portlet.py:156
+#: ../browser/portlet.py:179
 msgid "You are successfully subscribed to the newsletter !"
 msgstr ""
 
@@ -184,7 +188,7 @@ msgid "archives"
 msgstr ""
 
 #. Default: "Enter in your Sendinblue key here. If you have several Sendinblue accounts, you can enter one key per line. Log into https://account.sendinblue.com/advanced/api and copy the API Key to this field."
-#: ../interfaces.py:65
+#: ../interfaces.py:71
 msgid "help_api_keys"
 msgstr ""
 
