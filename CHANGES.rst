@@ -5,7 +5,8 @@ Changelog
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add recaptcha field on subscription portlet
+  [laulaz]
 
 
 1.0.1 (2017-01-10)
