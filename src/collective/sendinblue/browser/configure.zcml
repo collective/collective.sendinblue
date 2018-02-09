@@ -29,10 +29,6 @@
       provides="..interfaces.INewsletterSubscribe"
       factory=".portlet.Captcha" />
 
-  <adapter
-      factory=".portlet.CaptchaValidator"
-      />
-
   <!-- Resource directory for images -->
   <browser:resourceDirectory
     name="collective.sendinblue.images"

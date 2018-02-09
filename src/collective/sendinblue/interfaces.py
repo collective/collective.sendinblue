@@ -35,7 +35,7 @@ class INewsletterSubscribe(Interface):
     captcha = schema.TextLine(
         title=u"Captcha",
         description=u"",
-        required=True
+        required=False
     )
 
 
