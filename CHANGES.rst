@@ -5,7 +5,8 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Handle multiple lists for Sendinblue accounts
+  [laulaz]
 
 
 1.0.2 (2018-02-09)

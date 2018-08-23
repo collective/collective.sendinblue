@@ -75,7 +75,10 @@ class SendinblueAPI(object):
                     id = listinfo.get('id')
                     response = client.get_list({'id': id})
                     listdata = self.parse_response(response)
-                    lists[api_key] = listdata
+                    if api_key in lists:
+                        lists[api_key].append(listdata)
+                    else:
+                        lists[api_key] = [listdata]
             except BadResponseError:
                 logger.exception("Exception getting list details.")
         return lists

@@ -107,7 +107,7 @@
       <fieldset id="fieldset-lists" tal:condition="accounts">
         <legend id="fieldsetlegend-preview" i18n:translate="">Sendinblue Lists</legend>
         <table class="listing"
-               tal:define="lists python:view.sendinblue_lists()">
+               tal:define="lists_infos python:view.sendinblue_lists()">
           <thead>
             <tr>
               <th i18n:translate="">Account</th>
@@ -117,8 +117,9 @@
               <th i18n:translate="">Date created</th>
             </tr>
           </thead>
-          <tal:bcl tal:repeat="key lists">
-            <tbody tal:define="list python: lists[key]">
+          <tal:bcl tal:repeat="key lists_infos">
+            <tbody tal:define="lists python: lists_infos[key]"
+                   tal:repeat="list lists">
               <tr>
                 <td tal:content="key|empty"></td>
                 <td tal:content="list/id|empty"></td>
