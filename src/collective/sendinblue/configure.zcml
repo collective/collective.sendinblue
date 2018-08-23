@@ -28,6 +28,15 @@
       handler=".upgrades.install_recaptcha"
       />
 
+  <genericsetup:upgradeStep
+      source="1001"
+      destination="1002"
+      title="Reset cache after storage code changes"
+      description=""
+      profile="collective.sendinblue:default"
+      handler=".upgrades.update_cache"
+      />
+
   <utility
       provides="collective.sendinblue.interfaces.ISendinblueAPI"
       factory=".sendinblue.SendinblueAPI" />

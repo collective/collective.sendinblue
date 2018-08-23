@@ -16,7 +16,7 @@ Then, you can add a portlet to allow visitors to subscribe to one of your list (
 Features
 --------
 
-- multiple accounts support : you can link more than one Sendinblue account to your site
+- multiple accounts / lists support : you can link more than one Sendinblue account to your site
 - archive link : you can provide an URL that points to archives (that you manage manually)
 - reCaptcha on subscription portlet to avoid spammers
 
@@ -27,7 +27,7 @@ Limitations
 Integration of Sendinblue account is limited to 50 lists (which is huge).
 This is linked to official API limitation (batched lists) but could be improved later.
 
-It has been developed on Plone 4.3.11. No other versions were tested.
+It has been developed on Plone 4.3. No other versions were tested.
 
 
 Translations

@@ -17,16 +17,17 @@ def available_lists(context):
     if len(lists) > 1:
         # we have multiple accounts, so we need to distinguish them later
         accounts = sendinblue.accounts()
-    for key, listinfos in lists.items():
-        account_id = key
-        account_infos = accounts.get(account_id)
-        if account_infos:
-            company = account_infos[2].get('company', '')
-            title = u" — ".join([company, listinfos.get('name', '')])
-        else:
-            title = listinfos.get('name', '')
-        value = u"%s-%s" % (account_id, listinfos['id'])
-        terms.append(
-            SimpleTerm(value=value, title=title)
-        )
+    for key, listsinfos in lists.items():
+        for listinfos in listsinfos:
+            account_id = key
+            account_infos = accounts.get(account_id)
+            if account_infos:
+                company = account_infos[2].get('company', '')
+                title = u" — ".join([company, listinfos.get('name', '')])
+            else:
+                title = listinfos.get('name', '')
+            value = u"%s-%s" % (account_id, listinfos['id'])
+            terms.append(
+                SimpleTerm(value=value, title=title)
+            )
     return SimpleVocabulary(terms)

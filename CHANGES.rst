@@ -11,6 +11,9 @@ Changelog
 1.0.2 (2018-02-09)
 ------------------
 
+- Handle multiple lists for Sendinblue accounts
+  [laulaz]
+
 - Add recaptcha field on subscription portlet
   [laulaz]
 
