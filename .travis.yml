@@ -17,7 +17,8 @@ python:
 
 jobs:
   fast_finish: true
-  allow_failures:
+
+allow_failures:
     - python: "3.6"
     - python: "3.8"
 
@@ -36,3 +37,7 @@ after_success:
   - bin/createcoverage --output-dir=parts/test/coverage
   - bin/pip install -q coveralls
   - bin/coveralls
+
+notifications:
+  email:
+    - laurent.lasudry@affinitic.be
