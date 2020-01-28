@@ -13,7 +13,7 @@
     permission="cmf.ManagePortal"
     />
 
-  <!-- Portlet -->
+  <!-- Portlets -->
   <include package="plone.app.portlets" />
   <plone:portlet
     name="portlet.Sendinblue"
@@ -22,6 +22,15 @@
     renderer=".portlet.Renderer"
     addview=".portlet.AddForm"
     editview=".portlet.EditForm"
+    />
+
+  <plone:portlet
+    name="portlet.RedirectionSendinblue"
+    interface=".redirection_portlet.IRedirectionSendinbluePortlet"
+    assignment=".redirection_portlet.Assignment"
+    renderer=".redirection_portlet.Renderer"
+    addview=".redirection_portlet.AddForm"
+    editview=".redirection_portlet.EditForm"
     />
 
   <adapter

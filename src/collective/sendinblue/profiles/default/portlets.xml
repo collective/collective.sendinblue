@@ -4,4 +4,8 @@
     addview="portlet.Sendinblue"
     title="Sendinblue"
     />
+  <portlet
+    addview="portlet.RedirectionSendinblue"
+    title="Sendinblue redirection"
+    />
 </portlets>

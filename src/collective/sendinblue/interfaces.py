@@ -39,6 +39,17 @@ class INewsletterSubscribe(Interface):
     )
 
 
+class INewsletterRedirectionSubscribe(Interface):
+
+    email = schema.Email(
+        title=_(u"Email address"),
+        description=_(
+            u"help_email",
+            default=u"Please enter your email address."
+        ),
+        required=True)
+
+
 class ISendinblueAPI(Interface):
     """Sendinblue API"""
 
