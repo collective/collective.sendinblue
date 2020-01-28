@@ -26,20 +26,32 @@ msgstr ""
 msgid "Account key:"
 msgstr ""
 
-#: ../browser/portlet.py:109
+#: ../browser/portlet.py:117
 msgid "Add Sendinblue Portlet"
+msgstr ""
+
+#: ../browser/redirection_portlet.py:111
+msgid "Add redirect Sendinblue Portlet"
 msgstr ""
 
 #: ../browser/controlpanel.pt:87
 msgid "Address:"
 msgstr ""
 
-#: ../browser/portlet.py:185
+#: ../browser/portlet.py:200
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr ""
 
-#: ../browser/portlet.py:56
+#: ../browser/portlet.py:61
 msgid "Archive link"
+msgstr ""
+
+#: ../browser/redirection_portlet.py:52
+msgid "Base url of the registration form to redirect to"
+msgstr ""
+
+#: ../browser/redirection_portlet.py:51
+msgid "Base url to redirect to"
 msgstr ""
 
 #: ../browser/controlpanel.pt:95
@@ -58,15 +70,20 @@ msgstr ""
 msgid "Date created"
 msgstr ""
 
-#: ../browser/portlet.py:44
+#: ../browser/portlet.py:49
+#: ../browser/redirection_portlet.py:46
 msgid "Description of the rendered portlet"
 msgstr ""
 
-#: ../browser/portlet.py:129
+#: ../browser/portlet.py:140
 msgid "Edit Sendinblue Portlet"
 msgstr ""
 
-#: ../interfaces.py:27
+#: ../browser/redirection_portlet.py:135
+msgid "Edit redirect Sendinblue Portlet"
+msgstr ""
+
+#: ../interfaces.py:17
 msgid "Email address"
 msgstr ""
 
@@ -90,11 +107,11 @@ msgstr ""
 msgid "Last name:"
 msgstr ""
 
-#: ../browser/portlet.py:57
+#: ../browser/portlet.py:62
 msgid "Link to a page where you store previous newsletters"
 msgstr ""
 
-#: ../browser/portlet.py:49
+#: ../browser/portlet.py:54
 msgid "List"
 msgstr ""
 
@@ -106,15 +123,21 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../browser/portlet.py:161
+#: ../browser/redirection_portlet.py:58
+msgid "Others informations and descriptions"
+msgstr ""
+
+#: ../browser/portlet.py:176
 msgid "Please check the captcha to prove you're a human"
 msgstr ""
 
-#: ../browser/portlet.py:43
+#: ../browser/portlet.py:48
+#: ../browser/redirection_portlet.py:45
 msgid "Portlet description"
 msgstr ""
 
-#: ../browser/portlet.py:37
+#: ../browser/portlet.py:42
+#: ../browser/redirection_portlet.py:39
 msgid "Portlet header"
 msgstr ""
 
@@ -122,7 +145,7 @@ msgstr ""
 msgid "SMS plan:"
 msgstr ""
 
-#: ../browser/portlet.py:50
+#: ../browser/portlet.py:55
 msgid "Select list to enable subscriptions to"
 msgstr ""
 
@@ -142,6 +165,10 @@ msgstr ""
 msgid "Sendinblue Lists"
 msgstr ""
 
+#: ../configure.zcml:20
+msgid "Sendinblue integration for Plone."
+msgstr ""
+
 #: ../browser/controlpanel.py:21
 msgid "Sendinblue settings"
 msgstr ""
@@ -154,15 +181,25 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: ../browser/portlet.py:152
+#: ../browser/portlet.py:167
+#: ../browser/redirection_portlet.py:154
 msgid "Subscribe"
 msgstr ""
 
-#: ../browser/portlet.py:110
+#: ../browser/redirection_portlet.py:57
+msgid "Text"
+msgstr ""
+
+#: ../browser/redirection_portlet.py:112
+msgid "This portlet displays a redirect form to a Sendinblue list subscribe form."
+msgstr ""
+
+#: ../browser/portlet.py:118
 msgid "This portlet displays a subscription form for a Sendinblue newsletter."
 msgstr ""
 
-#: ../browser/portlet.py:38
+#: ../browser/portlet.py:43
+#: ../browser/redirection_portlet.py:40
 msgid "Title of the rendered portlet"
 msgstr ""
 
@@ -174,7 +211,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: ../browser/portlet.py:179
+#: ../browser/portlet.py:194
 msgid "You are successfully subscribed to the newsletter !"
 msgstr ""
 
@@ -187,13 +224,17 @@ msgstr ""
 msgid "archives"
 msgstr ""
 
+#: ../configure.zcml:20
+msgid "collective.sendinblue"
+msgstr ""
+
 #. Default: "Enter in your Sendinblue key here. If you have several Sendinblue accounts, you can enter one key per line. Log into https://account.sendinblue.com/advanced/api and copy the API Key to this field."
 #: ../interfaces.py:71
 msgid "help_api_keys"
 msgstr ""
 
 #. Default: "Please enter your email address."
-#: ../interfaces.py:28
+#: ../interfaces.py:18
 msgid "help_email"
 msgstr ""
 
@@ -201,4 +242,3 @@ msgstr ""
 #: ../browser/controlpanel.pt:33
 msgid "msg_sendinblue_no_account"
 msgstr ""
-
