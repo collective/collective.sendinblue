@@ -31,6 +31,8 @@
              i18n:translate="archives">Archives</a>
       </div>
 
+      <div class="visualClear" />
+
     </dd>
 
   </dl>
