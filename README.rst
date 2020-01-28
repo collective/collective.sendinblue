@@ -10,6 +10,13 @@ This package provides Sendinblue_ integration for Plone.
 It allows you to link your Plone site to your Sendinblue account via a new configuration section.
 Then, you can add a portlet to allow visitors to subscribe to one of your list (you can choose which one).
 
+Version 2.x are tested with Plone 5.2.x.
+
+Version 1.x are tested with Plone 4.3.x.
+The versions build from the branch 1.x will stay compatible with Plone 4.3.x.
+Please note that they do not provide the full functionality (no redirection portlet).
+
+
 .. _Sendinblue: https://sendinblue.com
 
 
@@ -27,7 +34,7 @@ Limitations
 Integration of Sendinblue account is limited to 50 lists (which is huge).
 This is linked to official API limitation (batched lists) but could be improved later.
 
-It has been developed on Plone 4.3. No other versions were tested.
+It has been developed on Plone 4.3 & Plone 5.2. No other versions were tested.
 
 
 Translations
