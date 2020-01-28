@@ -40,9 +40,9 @@ class SendinblueSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
         sendinblue = getUtility(ISendinblueAPI)
         try:
             return sendinblue.accounts()
-        except SendinblueException, error:
+        except SendinblueException as error:
             logger.error("Could not fetch account(s) details from " +
-                         "Sendinblue : %s" % error.message)
+                         "Sendinblue : %s" % error)
 
     def sendinblue_lists(self):
         if IDisableCSRFProtection is not None:
@@ -50,6 +50,6 @@ class SendinblueSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
         sendinblue = getUtility(ISendinblueAPI)
         try:
             return sendinblue.lists()
-        except SendinblueException, error:
+        except SendinblueException as error:
             logger.error("Could not fetch lists details from " +
-                         "Sendinblue : %s" % error.message)
+                         "Sendinblue : %s" % error)
