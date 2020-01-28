@@ -17,11 +17,6 @@ from z3c.form.interfaces import WidgetActionExecutionError
 from zope import schema
 from zope.component import getMultiAdapter
 from zope.component import getUtility
-try:
-    from zope.formlib import form
-    HAS_PLONE_5 = False
-except ImportError:
-    HAS_PLONE_5 = True
 from zope.interface import Invalid
 from zope.interface import alsoProvides
 from zope.interface import implementer
@@ -110,10 +105,9 @@ class Renderer(base.Renderer):
 
 
 class AddForm(base.AddForm):
-    if HAS_PLONE_5:
-        schema = ISendinbluePortlet
-    else:
-        form_fields = form.Fields(ISendinbluePortlet)
+
+    schema = ISendinbluePortlet
+
     label = _(u"Add Sendinblue Portlet")
     description = _(
         u"This portlet displays a subscription form for a Sendinblue newsletter.")
@@ -133,10 +127,9 @@ class AddForm(base.AddForm):
 
 
 class EditForm(base.EditForm):
-    if HAS_PLONE_5:
-        schema = ISendinbluePortlet
-    else:
-        form_fields = form.Fields(ISendinbluePortlet)
+
+    schema = ISendinbluePortlet
+
     label = _(u"Edit Sendinblue Portlet")
     description = _(
         u"This portlet displays a subscription form for a Sendinblue newsletter.")

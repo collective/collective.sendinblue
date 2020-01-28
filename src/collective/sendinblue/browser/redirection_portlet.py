@@ -15,12 +15,6 @@ from z3c.form.interfaces import IFormLayer
 from zope import schema
 from zope.component import getUtility
 
-try:
-    from zope.formlib import form
-    HAS_PLONE_5 = False
-except ImportError:
-    HAS_PLONE_5 = True
-
 from zope.interface import alsoProvides
 from zope.interface import implementer
 import logging
@@ -104,10 +98,9 @@ class Renderer(base.Renderer):
 
 
 class AddForm(base.AddForm):
-    if HAS_PLONE_5:
-        schema = IRedirectionSendinbluePortlet
-    else:
-        form_fields = form.Fields(IRedirectionSendinbluePortlet)
+
+    schema = IRedirectionSendinbluePortlet
+
     label = _(u"Add redirect Sendinblue Portlet")
     description = _(
         u"This portlet displays a redirect form to a Sendinblue list subscribe form."
@@ -128,10 +121,9 @@ class AddForm(base.AddForm):
 
 
 class EditForm(base.EditForm):
-    if HAS_PLONE_5:
-        schema = IRedirectionSendinbluePortlet
-    else:
-        form_fields = form.Fields(IRedirectionSendinbluePortlet)
+
+    schema = IRedirectionSendinbluePortlet
+
     label = _(u"Edit redirect Sendinblue Portlet")
     description = _(
         u"This portlet displays a redirect form to a Sendinblue list subscribe form."
