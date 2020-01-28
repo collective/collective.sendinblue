@@ -14,7 +14,7 @@
       <span class="portletTopRight"></span>
     </dt>
 
-    <dd class="portletItem odd">
+    <dd class="portletContent odd">
 
       <p tal:condition="view/description"
          tal:content="view/description" />
