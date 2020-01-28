@@ -9,6 +9,7 @@ collective.sendinblue
 This package provides Sendinblue_ integration for Plone.
 It allows you to link your Plone site to your Sendinblue account via a new configuration section.
 Then, you can add a portlet to allow visitors to subscribe to one of your list (you can choose which one).
+You can also add a portlet to simply redirect the user to your own Sendinblue subscription form (it will append user's email to your base url).
 
 Version 2.x are tested with Plone 5.2.x.
 
@@ -25,7 +26,7 @@ Features
 
 - multiple accounts / lists support : you can link more than one Sendinblue account to your site
 - archive link : you can provide an URL that points to archives (that you manage manually)
-- reCaptcha on subscription portlet to avoid spammers
+- reCaptcha on subscription portlet (not on redirection portlet) to avoid spammers
 
 
 Limitations
