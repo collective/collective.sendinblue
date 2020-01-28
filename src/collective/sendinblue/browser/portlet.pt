@@ -5,6 +5,9 @@
       lang="en"
       tal:omit-tag="">
 
+  <link rel="stylesheet" type="text/css" href=""
+        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.sendinblue.stylesheets/sendinblue.css" />
+
   <dl tal:attributes="class string:portlet portletSendinblue portletSendinblue"
       i18n:domain="collective.sendinblue">
 
