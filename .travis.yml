@@ -1,23 +1,38 @@
+os:
+  - linux
+dist: bionic
 language: python
-sudo: false
+
 cache:
+  pip: true
   directories:
   - eggs
-  - downloads
+
 python:
-  - 2.7
-matrix:
+  - "2.7"
+  - "3.6"
+  - "3.7.5"
+  - "3.7.6"
+  - "3.8"
+
+jobs:
   fast_finish: true
+  allow_failures:
+    - python: "3.6"
+    - python: "3.8"
+
+before_install:
+  - virtualenv -p `which python` .
+  - bin/pip install -r requirements.txt
+
 install:
-  - python bootstrap-buildout.py --setuptools-version=24.3.0
-  - bin/buildout -N buildout:download-cache=downloads annotate
-  - bin/buildout -N buildout:download-cache=downloads
+  - bin/buildout annotate
+  - bin/buildout
+
 script:
   - bin/test
+
 after_success:
-  - bin/createcoverage
-  - pip install coveralls
-  - coveralls
-notifications:
-  email:
-    - laurent.lasudry@affinitic.be
+  - bin/createcoverage --output-dir=parts/test/coverage
+  - bin/pip install -q coveralls
+  - bin/coveralls
