@@ -5,7 +5,11 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Minor fixes & improvements
+  [boulch, laulaz]
+
+- Update buildout & packages to last Plone 4 version
+  [laulaz]
 
 
 1.0.3 (2018-08-23)
