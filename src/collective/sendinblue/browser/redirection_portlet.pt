@@ -18,9 +18,11 @@
 
       <p tal:condition="view/description"
          tal:content="view/description" />
+
+      <span tal:replace="structure view/form/render" />
+
       <p tal:condition="view/text"
          tal:content="structure view/text" />
-      <span tal:replace="structure view/form/render" />
 
     </dd>
 
