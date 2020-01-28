@@ -17,16 +17,21 @@ from z3c.form.interfaces import WidgetActionExecutionError
 from zope import schema
 from zope.component import getMultiAdapter
 from zope.component import getUtility
-from zope.formlib import form
+try:
+    from zope.formlib import form
+    HAS_PLONE_5 = False
+except ImportError:
+    HAS_PLONE_5 = True
 from zope.interface import Invalid
 from zope.interface import alsoProvides
-from zope.interface import implements
+from zope.interface import implementer
 import logging
 
 from collective.sendinblue import _
 from collective.sendinblue.exceptions import SendinblueException
 from collective.sendinblue.interfaces import INewsletterSubscribe
 from collective.sendinblue.interfaces import ISendinblueAPI
+
 
 logger = logging.getLogger('collective.sendinblue')
 
@@ -59,8 +64,8 @@ class ISendinbluePortlet(IPortletDataProvider):
     )
 
 
+@implementer(ISendinbluePortlet)
 class Assignment(base.Assignment):
-    implements(ISendinbluePortlet)
 
     def __init__(self,
                  header=u'',
@@ -99,13 +104,16 @@ class Renderer(base.Renderer):
     def update(self):
         super(Renderer, self).update()
         z2.switch_on(self, request_layer=IFormLayer)
-        self.form = PortletSubscribeForm(self.data, self.request)
+        self.form = PortletSubscribeForm(aq_inner(self.context), self.request, self.data)
         alsoProvides(self.form, IWrappedForm)
         self.form.update()
 
 
 class AddForm(base.AddForm):
-    form_fields = form.Fields(ISendinbluePortlet)
+    if HAS_PLONE_5:
+        schema = ISendinbluePortlet
+    else:
+        form_fields = form.Fields(ISendinbluePortlet)
     label = _(u"Add Sendinblue Portlet")
     description = _(
         u"This portlet displays a subscription form for a Sendinblue newsletter.")
@@ -125,7 +133,10 @@ class AddForm(base.AddForm):
 
 
 class EditForm(base.EditForm):
-    form_fields = form.Fields(ISendinbluePortlet)
+    if HAS_PLONE_5:
+        schema = ISendinbluePortlet
+    else:
+        form_fields = form.Fields(ISendinbluePortlet)
     label = _(u"Edit Sendinblue Portlet")
     description = _(
         u"This portlet displays a subscription form for a Sendinblue newsletter.")
@@ -149,10 +160,14 @@ class PortletSubscribeForm(Form):
     ignoreContext = True
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
 
+    def __init__(self, context, request, data=None):
+        super(PortletSubscribeForm, self).__init__(context, request)
+        self.data = data
+
     @button.buttonAndHandler(_('Subscribe'), name='subscribe')
     def handle_subscribe(self, action):
         captcha = getMultiAdapter(
-            (aq_inner(self.context), self.request),
+            (aq_inner(self.data), self.request),
             name='recaptcha'
         )
         if not captcha.verify():
@@ -166,13 +181,13 @@ class PortletSubscribeForm(Form):
             return
 
         email = data.get('email')
-        account_id, list_id = self.context.newsletter_list.split('-')
+        account_id, list_id = self.data.newsletter_list.split('-')
         sendinblue = getUtility(ISendinblueAPI)
         try:
             success = sendinblue.subscribe(account_id, list_id, email)
-        except SendinblueException, error:
+        except SendinblueException as error:
             logger.error("Could not subscribe user %s : %s" % (email,
-                                                               error.message))
+                                                               str(error)))
             success = False
         if success:
             api.portal.show_message(

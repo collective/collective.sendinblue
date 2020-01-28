@@ -3,7 +3,7 @@
 from mailin import Mailin
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
-from zope.interface import implements
+from zope.interface import implementer
 import logging
 
 from collective.sendinblue.exceptions import BadResponseError
@@ -17,10 +17,10 @@ logger = logging.getLogger('collective.sendinblue')
 API_URL = "https://api.sendinblue.com/v2.0"
 
 
+@implementer(ISendinblueAPI)
 class SendinblueAPI(object):
     """Utility for Sendinblue API calls"""
 
-    implements(ISendinblueAPI)
     key_accounts = "collective.sendinblue.cache.accounts"
     key_lists = "collective.sendinblue.cache.lists"
 
