@@ -58,6 +58,7 @@ and then running ``bin/buildout``
 To do
 -----
 
+- Switch to SendinBlue API v3
 - Add more tests
 - If a Plone user is connected, use his email address to populate subscription portlet (default value)
 - If a Plone user is connected, change the portlet form to a text if he's already subscribed
