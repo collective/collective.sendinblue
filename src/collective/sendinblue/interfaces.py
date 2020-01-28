@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Products.CMFDefault.exceptions import EmailAddressInvalid
-from Products.CMFDefault.utils import checkEmailAddress
-from Products.CMFPlone.PloneTool import EMAIL_RE
-from zope import schema
+from plone import schema
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
@@ -14,23 +11,15 @@ class ICollectiveSendinblueLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
-def validate_email(value):
-    if EMAIL_RE.search(value) is None:
-        raise EmailAddressInvalid(value)
-    checkEmailAddress(value)
-    return True
-
-
 class INewsletterSubscribe(Interface):
 
-    email = schema.TextLine(
+    email = schema.Email(
         title=_(u"Email address"),
         description=_(
             u"help_email",
             default=u"Please enter your email address."
         ),
-        required=True,
-        constraint=validate_email)
+        required=True)
 
     captcha = schema.TextLine(
         title=u"Captcha",
