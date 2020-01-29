@@ -5,7 +5,11 @@ Changelog
 1.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add new redirection portlet (to use custom subscription form)
+  [boulch, laulaz]
+
+- Migrate to Plone 5 & drop Plone 4 support
+  [boulch, laulaz]
 
 
 1.0.4 (2020-01-29)
