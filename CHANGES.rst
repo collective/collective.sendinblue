@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0.5 (unreleased)
-------------------
+2.0 (2020-01-29)
+----------------
 
 - Add new redirection portlet (to use custom subscription form)
   [boulch, laulaz]
