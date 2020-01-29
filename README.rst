@@ -2,7 +2,7 @@
 collective.sendinblue
 =====================
 
-.. image:: https://travis-ci.org/collective/collective.sendinblue.svg?branch=master
+.. image:: https://travis-ci.org/collective/collective.sendinblue.svg?branch=1.x
     :target: https://travis-ci.org/collective/collective.sendinblue
 
 
