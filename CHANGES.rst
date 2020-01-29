@@ -5,7 +5,9 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add placeholder to email fields
+  This allows you to hide field label if you want to
+  [laulaz]
 
 
 2.0 (2020-01-29)

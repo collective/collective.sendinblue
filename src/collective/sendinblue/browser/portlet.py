@@ -4,6 +4,7 @@ from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from plone.app.portlets.portlets import base
+from plone.autoform.widgets import ParameterizedWidget
 from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
 from plone.memoize.compress import xhtml_compress
 from plone.portlets.interfaces import IPortletDataProvider
@@ -152,6 +153,10 @@ class PortletSubscribeForm(Form):
     fields = field.Fields(INewsletterSubscribe)
     ignoreContext = True
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
+    fields["email"].widgetFactory = ParameterizedWidget(
+        None,
+        placeholder=_(u"Email address"),
+    )
 
     def __init__(self, context, request, data=None):
         super(PortletSubscribeForm, self).__init__(context, request)

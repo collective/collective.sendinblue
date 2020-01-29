@@ -4,6 +4,7 @@ from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.portlets.portlets import base
 from plone.app.textfield import RichText
+from plone.autoform.widgets import ParameterizedWidget
 from plone.memoize.compress import xhtml_compress
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.z3cform import z2
@@ -138,6 +139,10 @@ class EditForm(base.EditForm):
 class PortletSubscribeForm(Form):
     fields = field.Fields(INewsletterRedirectionSubscribe)
     ignoreContext = True
+    fields["email"].widgetFactory = ParameterizedWidget(
+        None,
+        placeholder=_(u"Email address"),
+    )
 
     def __init__(self, context, request, data=None):
         super(PortletSubscribeForm, self).__init__(context, request)
