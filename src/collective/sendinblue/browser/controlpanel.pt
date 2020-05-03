@@ -55,16 +55,16 @@
               </tr>
               <tr>
                  <td i18n:translate="">Mail plan:</td>
-                 <td>
-                     <span tal:replace="mail_plan/plan_type|empty"/> &mdash; 
-                     credits : <span tal:replace="mail_plan/credits|empty"/> (<span tal:replace="mail_plan/credit_type|empty"/>)
+                 <td i18n:translate="">
+                     <span tal:replace="mail_plan/plan_type|empty" i18n:name="mail_plan_plan_type" /> &mdash; 
+                     credits : <span tal:replace="mail_plan/credits|empty" i18n:name="mail_plan_credits" /> (<span tal:replace="mail_plan/credit_type|empty" i18n:name="mail_plan_credit_type" />)
                  </td>
               </tr>
               <tr>
                  <td i18n:translate="">SMS plan:</td>
-                 <td>
-                     <span tal:replace="sms_plan/plan_type|empty"/> &mdash; 
-                     credits : <span tal:replace="sms_plan/credits|empty"/> (<span tal:replace="sms_plan/credit_type|empty"/>)
+                 <td i18n:translate="">
+                     <span tal:replace="sms_plan/plan_type|empty" i18n:name="sms_plan_plan_type" /> &mdash; 
+                     credits : <span tal:replace="sms_plan/credits|empty" i18n:name="sms_plan_credits" /> (<span tal:replace="sms_plan/credit_type|empty" i18n:name="sms_plan_credit_type" />)
                  </td>
               </tr>
               <tr>

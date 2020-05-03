@@ -14,6 +14,14 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.sendinblue\n"
 
+#: ../browser/controlpanel.pt:60
+msgid "${mail_plan_plan_type} &mdash; credits : ${mail_plan_credits} (${mail_plan_credit_type})"
+msgstr ""
+
+#: ../browser/controlpanel.pt:67
+msgid "${sms_plan_plan_type} &mdash; credits : ${sms_plan_credits} (${sms_plan_credit_type})"
+msgstr ""
+
 #: ../interfaces.py:78
 msgid "API Key"
 msgstr ""
@@ -26,11 +34,11 @@ msgstr ""
 msgid "Account key:"
 msgstr ""
 
-#: ../browser/portlet.py:117
+#: ../browser/portlet.py:112
 msgid "Add Sendinblue Portlet"
 msgstr ""
 
-#: ../browser/redirection_portlet.py:111
+#: ../browser/redirection_portlet.py:105
 msgid "Add redirect Sendinblue Portlet"
 msgstr ""
 
@@ -38,19 +46,19 @@ msgstr ""
 msgid "Address:"
 msgstr ""
 
-#: ../browser/portlet.py:200
+#: ../browser/portlet.py:198
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr ""
 
-#: ../browser/portlet.py:61
+#: ../browser/portlet.py:57
 msgid "Archive link"
 msgstr ""
 
-#: ../browser/redirection_portlet.py:52
+#: ../browser/redirection_portlet.py:47
 msgid "Base url of the registration form to redirect to"
 msgstr ""
 
-#: ../browser/redirection_portlet.py:51
+#: ../browser/redirection_portlet.py:46
 msgid "Base url to redirect to"
 msgstr ""
 
@@ -70,19 +78,21 @@ msgstr ""
 msgid "Date created"
 msgstr ""
 
-#: ../browser/portlet.py:49
-#: ../browser/redirection_portlet.py:46
+#: ../browser/portlet.py:45
+#: ../browser/redirection_portlet.py:41
 msgid "Description of the rendered portlet"
 msgstr ""
 
-#: ../browser/portlet.py:140
+#: ../browser/portlet.py:134
 msgid "Edit Sendinblue Portlet"
 msgstr ""
 
-#: ../browser/redirection_portlet.py:135
+#: ../browser/redirection_portlet.py:128
 msgid "Edit redirect Sendinblue Portlet"
 msgstr ""
 
+#: ../browser/portlet.py:158
+#: ../browser/redirection_portlet.py:144
 #: ../interfaces.py:17
 msgid "Email address"
 msgstr ""
@@ -107,11 +117,11 @@ msgstr ""
 msgid "Last name:"
 msgstr ""
 
-#: ../browser/portlet.py:62
+#: ../browser/portlet.py:58
 msgid "Link to a page where you store previous newsletters"
 msgstr ""
 
-#: ../browser/portlet.py:54
+#: ../browser/portlet.py:50
 msgid "List"
 msgstr ""
 
@@ -123,21 +133,21 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../browser/redirection_portlet.py:58
+#: ../browser/redirection_portlet.py:53
 msgid "Others informations and descriptions"
 msgstr ""
 
-#: ../browser/portlet.py:176
+#: ../browser/portlet.py:174
 msgid "Please check the captcha to prove you're a human"
 msgstr ""
 
-#: ../browser/portlet.py:48
-#: ../browser/redirection_portlet.py:45
+#: ../browser/portlet.py:44
+#: ../browser/redirection_portlet.py:40
 msgid "Portlet description"
 msgstr ""
 
-#: ../browser/portlet.py:42
-#: ../browser/redirection_portlet.py:39
+#: ../browser/portlet.py:38
+#: ../browser/redirection_portlet.py:34
 msgid "Portlet header"
 msgstr ""
 
@@ -145,7 +155,7 @@ msgstr ""
 msgid "SMS plan:"
 msgstr ""
 
-#: ../browser/portlet.py:55
+#: ../browser/portlet.py:51
 msgid "Select list to enable subscriptions to"
 msgstr ""
 
@@ -181,25 +191,25 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: ../browser/portlet.py:167
-#: ../browser/redirection_portlet.py:154
+#: ../browser/portlet.py:165
+#: ../browser/redirection_portlet.py:151
 msgid "Subscribe"
 msgstr ""
 
-#: ../browser/redirection_portlet.py:57
+#: ../browser/redirection_portlet.py:52
 msgid "Text"
 msgstr ""
 
-#: ../browser/redirection_portlet.py:112
+#: ../browser/redirection_portlet.py:106
 msgid "This portlet displays a redirect form to a Sendinblue list subscribe form."
 msgstr ""
 
-#: ../browser/portlet.py:118
+#: ../browser/portlet.py:113
 msgid "This portlet displays a subscription form for a Sendinblue newsletter."
 msgstr ""
 
-#: ../browser/portlet.py:43
-#: ../browser/redirection_portlet.py:40
+#: ../browser/portlet.py:39
+#: ../browser/redirection_portlet.py:35
 msgid "Title of the rendered portlet"
 msgstr ""
 
@@ -211,7 +221,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: ../browser/portlet.py:194
+#: ../browser/portlet.py:192
 msgid "You are successfully subscribed to the newsletter !"
 msgstr ""
 
@@ -220,7 +230,7 @@ msgid "Zip:"
 msgstr ""
 
 #. Default: "Archives"
-#: ../browser/portlet.pt:26
+#: ../browser/portlet.pt:29
 msgid "archives"
 msgstr ""
 

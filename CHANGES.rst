@@ -5,6 +5,9 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
+- Updated gettext files support
+  [macagua]
+
 - Add placeholder to email fields
   This allows you to hide field label if you want to
   [laulaz]
