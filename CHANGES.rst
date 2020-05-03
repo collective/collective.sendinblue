@@ -5,6 +5,9 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
+- Added Spanish translation
+  [macagua]
+
 - Updated gettext files support
   [macagua]
 
