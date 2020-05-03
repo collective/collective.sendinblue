@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[plone-collective.collective-sendinblue-pot]
+file_filter = src/collective/sendinblue/locales/<lang>/LC_MESSAGES/collective.sendinblue.po
+minimum_perc = 0
+source_file = src/collective/sendinblue/locales/collective.sendinblue.pot
+source_lang = en
+type = PO
