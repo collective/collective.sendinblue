@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-03 05:44+0000\n"
+"POT-Creation-Date: 2020-05-03 06:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.sendinblue\n"
-
-#: ../browser/controlpanel.py:22
-msgid ""
-msgstr ""
 
 #: ../browser/controlpanel.pt:60
 msgid "${mail_plan_plan_type} &mdash; credits : ${mail_plan_credits} (${mail_plan_credit_type})"
@@ -180,6 +176,10 @@ msgstr ""
 
 #: ../browser/controlpanel.pt:108
 msgid "Sendinblue Lists"
+msgstr ""
+
+#: ../browser/controlpanel.py:22
+msgid "Sendinblue integration for Plone"
 msgstr ""
 
 #: ../configure.zcml:20

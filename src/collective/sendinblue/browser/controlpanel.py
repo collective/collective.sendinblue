@@ -19,7 +19,7 @@ class SendinblueSettingsEditForm(controlpanel.RegistryEditForm):
 
     schema = ISendinblueSettings
     label = _(u"Sendinblue settings")
-    description = _(u"""""")
+    description = _(u"Sendinblue integration for Plone")
 
     def update(self):
         self.updateCache()

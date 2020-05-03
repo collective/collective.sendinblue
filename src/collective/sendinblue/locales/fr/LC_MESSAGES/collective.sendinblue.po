@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendinblue\n"
-"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2020-05-03 06:52+0000\n"
 "PO-Revision-Date: 2014-05-06 11:41+0000\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,6 +175,10 @@ msgstr "Compte(s) Sendinblue"
 #: ../browser/controlpanel.pt:108
 msgid "Sendinblue Lists"
 msgstr "Listes Sendinblue"
+
+#: ../browser/controlpanel.py:22
+msgid "Sendinblue integration for Plone"
+msgstr ""
 
 #: ../configure.zcml:20
 msgid "Sendinblue integration for Plone."
