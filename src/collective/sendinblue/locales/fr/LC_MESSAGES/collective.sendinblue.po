@@ -224,11 +224,11 @@ msgstr "Nombre total d'inscrits"
 
 #: ../browser/portlet.py:64
 msgid "Use a captcha to protect your subscription form against robots"
-msgstr ""
+msgstr "Utiliser un captcha pour protéger votre formulaire d'inscription contre les robots"
 
 #: ../browser/portlet.py:63
 msgid "Use captcha"
-msgstr ""
+msgstr "Avec captcha"
 
 #: ../browser/controlpanel.pt:46
 msgid "Value"
