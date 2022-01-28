@@ -5,6 +5,9 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
+- Make captcha use optional in subscription portlet (for a11y)
+  [laulaz]
+
 - Get rid of includeDependencies for Plone 6 compatibility
   [laulaz]
 

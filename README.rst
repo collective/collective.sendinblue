@@ -21,7 +21,7 @@ Features
 
 - multiple accounts / lists support : you can link more than one Sendinblue account to your site
 - archive link : you can provide an URL that points to archives (that you manage manually)
-- reCaptcha on subscription portlet (not on redirection portlet) to avoid spammers
+- optional reCaptcha on subscription portlet (not on redirection portlet) to avoid spammers
 
 
 Limitations

@@ -59,6 +59,12 @@ class ISendinbluePortlet(IPortletDataProvider):
         required=False
     )
 
+    use_captcha = schema.Bool(
+        title=_(u"Use captcha"),
+        description=_(u"Use a captcha to protect your subscription form against robots"),
+        default=True
+    )
+
 
 @implementer(ISendinbluePortlet)
 class Assignment(base.Assignment):
@@ -67,11 +73,13 @@ class Assignment(base.Assignment):
                  header=u'',
                  description=u'',
                  newsletter_list=u'',
-                 archive_url=u''):
+                 archive_url=u'',
+                 use_captcha=True):
         self.header = header
         self.description = description
         self.newsletter_list = newsletter_list
         self.archive_url = archive_url
+        self.use_captcha = use_captcha
 
     @property
     def title(self):
@@ -124,6 +132,7 @@ class AddForm(base.AddForm):
             description=data.get('description', u''),
             newsletter_list=data.get('newsletter_list', u''),
             archive_url=data.get('archive_url', u''),
+            use_captcha=data.get('use_captcha', True),
         )
 
 
@@ -162,17 +171,23 @@ class PortletSubscribeForm(Form):
         super(PortletSubscribeForm, self).__init__(context, request)
         self.data = data
 
+    def update(self):
+        if not self.data.use_captcha:
+            self.fields = self.fields.omit("captcha")
+        super(PortletSubscribeForm, self).update()
+
     @button.buttonAndHandler(_('Subscribe'), name='subscribe')
     def handle_subscribe(self, action):
-        captcha = getMultiAdapter(
-            (aq_inner(self.data), self.request),
-            name='recaptcha'
-        )
-        if not captcha.verify():
-            raise WidgetActionExecutionError(
-                'captcha',
-                Invalid(_(u"Please check the captcha to prove you're a human"))
+        if self.data.use_captcha:
+            captcha = getMultiAdapter(
+                (aq_inner(self.data), self.request),
+                name='recaptcha'
             )
+            if not captcha.verify():
+                raise WidgetActionExecutionError(
+                    'captcha',
+                    Invalid(_(u"Please check the captcha to prove you're a human"))
+                )
 
         data, errors = self.extractData()
         if errors:
