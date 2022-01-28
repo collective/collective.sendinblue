@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.1 (unreleased)
+2.0.1 (2022-01-28)
 ------------------
 
 - Make captcha use optional in subscription portlet (for a11y)
