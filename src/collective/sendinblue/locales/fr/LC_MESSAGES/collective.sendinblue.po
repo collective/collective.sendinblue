@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendinblue\n"
-"POT-Creation-Date: 2020-05-03 06:52+0000\n"
+"POT-Creation-Date: 2022-01-28 14:23+0000\n"
 "PO-Revision-Date: 2014-05-06 11:41+0000\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr "Compte"
 msgid "Account key:"
 msgstr "Clé du compte:"
 
-#: ../browser/portlet.py:112
+#: ../browser/portlet.py:120
 msgid "Add Sendinblue Portlet"
 msgstr "Ajouter un portlet Sendinblue"
 
@@ -47,7 +47,7 @@ msgstr "Ajouter une portlet de redirection sendinblue"
 msgid "Address:"
 msgstr "Adresse:"
 
-#: ../browser/portlet.py:198
+#: ../browser/portlet.py:214
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr "Une erreur est survenur lors de l'inscription à la newsletter"
 
@@ -84,7 +84,7 @@ msgstr "Date de création"
 msgid "Description of the rendered portlet"
 msgstr "Description qui s'affichera dans le portlet"
 
-#: ../browser/portlet.py:134
+#: ../browser/portlet.py:143
 msgid "Edit Sendinblue Portlet"
 msgstr "Editer le portlet Sendinblue"
 
@@ -92,7 +92,7 @@ msgstr "Editer le portlet Sendinblue"
 msgid "Edit redirect Sendinblue Portlet"
 msgstr "Editer la portlet de redirection vers Sendinblue."
 
-#: ../browser/portlet.py:158
+#: ../browser/portlet.py:167
 #: ../browser/redirection_portlet.py:144
 #: ../interfaces.py:17
 msgid "Email address"
@@ -138,7 +138,7 @@ msgstr "Nom"
 msgid "Others informations and descriptions"
 msgstr "Autres informations et descriptions."
 
-#: ../browser/portlet.py:174
+#: ../browser/portlet.py:189
 msgid "Please check the captcha to prove you're a human"
 msgstr "Veuillez cliquer sur le captcha pour prouver que vous n'êtes pas un robot"
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Standard"
 msgstr "Configuration"
 
-#: ../browser/portlet.py:165
+#: ../browser/portlet.py:179
 #: ../browser/redirection_portlet.py:151
 msgid "Subscribe"
 msgstr "S'inscrire"
@@ -209,7 +209,7 @@ msgstr "Texte"
 msgid "This portlet displays a redirect form to a Sendinblue list subscribe form."
 msgstr "Cette portlet sert à afficher un formulaire qui va rediriger l'utilisateur vers un formulaire d'enregistrement de sendinblue "
 
-#: ../browser/portlet.py:113
+#: ../browser/portlet.py:121
 msgid "This portlet displays a subscription form for a Sendinblue newsletter."
 msgstr "Ce portlet affiche un formulaire d'inscription à une newsletter Sendinblue"
 
@@ -222,11 +222,19 @@ msgstr "Titre qui s'affichera dans le portlet"
 msgid "Total subscribers"
 msgstr "Nombre total d'inscrits"
 
+#: ../browser/portlet.py:64
+msgid "Use a captcha to protect your subscription form against robots"
+msgstr ""
+
+#: ../browser/portlet.py:63
+msgid "Use captcha"
+msgstr ""
+
 #: ../browser/controlpanel.pt:46
 msgid "Value"
 msgstr "Valeur"
 
-#: ../browser/portlet.py:192
+#: ../browser/portlet.py:208
 msgid "You are successfully subscribed to the newsletter !"
 msgstr "Vous êtes inscrit à la newsletter !"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendinblue\n"
-"POT-Creation-Date: 2020-05-03 06:52+0000\n"
+"POT-Creation-Date: 2022-01-28 14:23+0000\n"
 "PO-Revision-Date: 2016-03-30 11:42+0100\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Account key:"
 msgstr ""
 
-#: ../browser/portlet.py:112
+#: ../browser/portlet.py:120
 msgid "Add Sendinblue Portlet"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Address:"
 msgstr ""
 
-#: ../browser/portlet.py:198
+#: ../browser/portlet.py:214
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Description of the rendered portlet"
 msgstr ""
 
-#: ../browser/portlet.py:134
+#: ../browser/portlet.py:143
 msgid "Edit Sendinblue Portlet"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Edit redirect Sendinblue Portlet"
 msgstr ""
 
-#: ../browser/portlet.py:158
+#: ../browser/portlet.py:167
 #: ../browser/redirection_portlet.py:144
 #: ../interfaces.py:17
 msgid "Email address"
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Others informations and descriptions"
 msgstr ""
 
-#: ../browser/portlet.py:174
+#: ../browser/portlet.py:189
 msgid "Please check the captcha to prove you're a human"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: ../browser/portlet.py:165
+#: ../browser/portlet.py:179
 #: ../browser/redirection_portlet.py:151
 msgid "Subscribe"
 msgstr ""
@@ -208,7 +208,7 @@ msgstr ""
 msgid "This portlet displays a redirect form to a Sendinblue list subscribe form."
 msgstr ""
 
-#: ../browser/portlet.py:113
+#: ../browser/portlet.py:121
 msgid "This portlet displays a subscription form for a Sendinblue newsletter."
 msgstr ""
 
@@ -221,11 +221,19 @@ msgstr ""
 msgid "Total subscribers"
 msgstr ""
 
+#: ../browser/portlet.py:64
+msgid "Use a captcha to protect your subscription form against robots"
+msgstr ""
+
+#: ../browser/portlet.py:63
+msgid "Use captcha"
+msgstr ""
+
 #: ../browser/controlpanel.pt:46
 msgid "Value"
 msgstr ""
 
-#: ../browser/portlet.py:192
+#: ../browser/portlet.py:208
 msgid "You are successfully subscribed to the newsletter !"
 msgstr ""
 
