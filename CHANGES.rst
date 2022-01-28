@@ -5,6 +5,9 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
+- Get rid of includeDependencies for Plone 6 compatibility
+  [laulaz]
+
 - Add Transifex.net service integration to manage the translation process
   [macagua]
 

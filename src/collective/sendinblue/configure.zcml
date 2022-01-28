@@ -6,7 +6,7 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <includeDependencies package="." />
+  <include package="plone.formwidget.recaptcha" />
 
   <include package=".browser" />
 
