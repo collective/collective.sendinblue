@@ -5,7 +5,9 @@ Changelog
 2.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Migrate to Sendinblue API v3 (#4)
+  Warning: old api keys will be cleared (because v2 keys are not compatible)
+  [laulaz]
 
 
 2.0.1 (2022-01-28)

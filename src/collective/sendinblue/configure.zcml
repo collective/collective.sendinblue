@@ -37,6 +37,15 @@
       handler=".upgrades.update_cache"
       />
 
+  <genericsetup:upgradeStep
+      source="1002"
+      destination="1003"
+      title="Remove existing api keys (v2) because we now use Sendinblue v3 api"
+      description=""
+      profile="collective.sendinblue:default"
+      handler=".upgrades.remove_old_api_keys"
+      />
+
   <utility
       provides="collective.sendinblue.interfaces.ISendinblueAPI"
       factory=".sendinblue.SendinblueAPI" />

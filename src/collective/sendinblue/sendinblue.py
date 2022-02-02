@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 
-from mailin import Mailin
 from plone.registry.interfaces import IRegistry
+from sib_api_v3_sdk.rest import ApiException
 from zope.component import getUtility
 from zope.interface import implementer
 import logging
+import sib_api_v3_sdk
 
-from collective.sendinblue.exceptions import BadResponseError
-from collective.sendinblue.exceptions import SendinblueException
 from collective.sendinblue.interfaces import ISendinblueAPI
 from collective.sendinblue.interfaces import ISendinblueSettings
 
 _marker = object()
 logger = logging.getLogger('collective.sendinblue')
-
-API_URL = "https://api.sendinblue.com/v2.0"
 
 
 @implementer(ISendinblueAPI)
@@ -39,21 +36,10 @@ class SendinblueAPI(object):
 
     def connect(self, api_key):
         """Create client"""
-        client = Mailin(API_URL, api_key)
+        configuration = sib_api_v3_sdk.Configuration()
+        configuration.api_key['api-key'] = api_key
+        client = sib_api_v3_sdk.ApiClient(configuration)
         return client
-
-    def parse_response(self, response):
-        """Parse Sendinblue response format"""
-        if not type(response) is dict:
-            raise BadResponseError(response)
-        code = response.get('code', None)
-        if code is None:
-            raise BadResponseError(response)
-        message = response.get('message', None)
-        if code == 'failure':
-            raise SendinblueException(code, message)
-        data = response.get('data', None)
-        return data
 
     def lists(self):
         """Retrieves lists (cached)"""
@@ -68,18 +54,17 @@ class SendinblueAPI(object):
         lists = {}
         for api_key in self.api_keys:
             client = self.connect(api_key)
+            api_list = sib_api_v3_sdk.ListsApi(client)
             try:
-                response = client.get_lists(50)
-                data = self.parse_response(response)
-                for listinfo in data:
-                    id = listinfo.get('id')
-                    response = client.get_list({'id': id})
-                    listdata = self.parse_response(response)
+                response = api_list.get_lists()
+                for listinfo in response.lists:
+                    list_id = listinfo.get('id')
+                    listdata = api_list.get_list(list_id)
                     if api_key in lists:
                         lists[api_key].append(listdata)
                     else:
                         lists[api_key] = [listdata]
-            except BadResponseError:
+            except ApiException:
                 logger.exception("Exception getting list details.")
         return lists
 
@@ -87,20 +72,23 @@ class SendinblueAPI(object):
         """API call to create a contact and subscribe it to a list"""
         self.initialize()
         client = self.connect(account_id)
+        api_contact = sib_api_v3_sdk.ContactsApi(client)
+        user = sib_api_v3_sdk.CreateContact(email=email_address)
         try:
-            response = client.create_update_user({'email': email_address})
-            data = self.parse_response(response)
-        except BadResponseError:
+            api_contact.create_contact(user)
+        except ApiException:
             logger.exception("Exception creating user %s" % email_address)
             return
+
+        api_lists = sib_api_v3_sdk.ListsApi(client)
+        user_in_list = sib_api_v3_sdk.AddContactToList()
+        user_in_list.emails = [email_address]
         try:
-            response = client.add_users_list({'id': list_id,
-                                              'users': [email_address]})
-            data = self.parse_response(response)
-        except BadResponseError:
+            response = api_lists.add_contact_to_list(list_id, user_in_list)
+        except ApiException:
             logger.exception("Exception subscribing %s" % email_address)
             return
-        if len(data.get('success').get('users')) == 1:
+        if len(response.contacts.success) == 1:
             return True
         else:
             return False
@@ -119,10 +107,9 @@ class SendinblueAPI(object):
         for api_key in self.api_keys:
             client = self.connect(api_key)
             try:
-                response = client.get_account()
-                account = self.parse_response(response)
+                account = sib_api_v3_sdk.AccountApi(client).get_account()
                 accounts[api_key] = account
-            except BadResponseError:
+            except ApiException:
                 logger.exception("Exception getting account details.")
         return accounts
 
@@ -135,6 +122,8 @@ class SendinblueAPI(object):
         """
         self.initialize()
         if not self.settings.api_keys:
+            self.registry[self.key_accounts] = {}
+            self.registry[self.key_lists] = {}
             return
         # Note that we must call the _underscore methods. These
         # bypass the cache and go directly to Sendinblue, so we are

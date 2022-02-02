@@ -42,7 +42,7 @@ setup(
         'Products.GenericSetup>=1.8.2',
         'plone.api',
         'setuptools',
-        'Sendinblue',
+        'sib-api-v3-sdk',
         'plone.formwidget.recaptcha',
     ],
     extras_require={

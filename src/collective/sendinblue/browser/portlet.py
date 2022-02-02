@@ -24,7 +24,6 @@ from zope.interface import implementer
 import logging
 
 from collective.sendinblue import _
-from collective.sendinblue.exceptions import SendinblueException
 from collective.sendinblue.interfaces import INewsletterSubscribe
 from collective.sendinblue.interfaces import ISendinblueAPI
 
@@ -194,14 +193,9 @@ class PortletSubscribeForm(Form):
             return
 
         email = data.get('email')
-        account_id, list_id = self.data.newsletter_list.split('-')
+        account_id, list_id = self.data.newsletter_list.split('|')
         sendinblue = getUtility(ISendinblueAPI)
-        try:
-            success = sendinblue.subscribe(account_id, list_id, email)
-        except SendinblueException as error:
-            logger.error("Could not subscribe user %s : %s" % (email,
-                                                               str(error)))
-            success = False
+        success = sendinblue.subscribe(account_id, list_id, email)
         if success:
             api.portal.show_message(
                 _(u'You are successfully subscribed to the newsletter !'),
