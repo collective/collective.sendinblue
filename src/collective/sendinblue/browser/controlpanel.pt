@@ -110,7 +110,6 @@
               <th i18n:translate="">ID</th>
               <th i18n:translate="">Name</th>
               <th i18n:translate="">Total subscribers</th>
-              <th i18n:translate="">Date created</th>
             </tr>
           </thead>
           <tal:bcl tal:repeat="key lists_infos">
@@ -121,7 +120,6 @@
                 <td tal:content="list/id|empty"></td>
                 <td tal:content="list/name|empty"></td>
                 <td tal:content="list/total_subscribers|empty"></td>
-                <td tal:content="list/entered|empty"></td>
               </tr>
             </tbody>
           </tal:bcl>
