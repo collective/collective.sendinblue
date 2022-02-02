@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendinblue\n"
-"POT-Creation-Date: 2022-01-28 14:23+0000\n"
+"POT-Creation-Date: 2022-02-02 16:49+0000\n"
 "PO-Revision-Date: 2016-03-30 11:42+0100\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,27 +14,23 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.sendinblue\n"
 
-#: ../browser/controlpanel.pt:60
-msgid "${mail_plan_plan_type} &mdash; credits : ${mail_plan_credits} (${mail_plan_credit_type})"
+#: ../browser/controlpanel.pt:61
+msgid "${plan_type} &mdash; credits : ${plan_credits} (${plan_credits_type})"
 msgstr ""
 
-#: ../browser/controlpanel.pt:67
-msgid "${sms_plan_plan_type} &mdash; credits : ${sms_plan_credits} (${sms_plan_credit_type})"
-msgstr ""
-
-#: ../interfaces.py:78
+#: ../interfaces.py:70
 msgid "API Key"
 msgstr ""
 
-#: ../browser/controlpanel.pt:113
+#: ../browser/controlpanel.pt:109
 msgid "Account"
 msgstr ""
 
-#: ../browser/controlpanel.pt:53
+#: ../browser/controlpanel.pt:51
 msgid "Account key:"
 msgstr ""
 
-#: ../browser/portlet.py:120
+#: ../browser/portlet.py:122
 msgid "Add Sendinblue Portlet"
 msgstr ""
 
@@ -42,15 +38,15 @@ msgstr ""
 msgid "Add redirect Sendinblue Portlet"
 msgstr ""
 
-#: ../browser/controlpanel.pt:87
+#: ../browser/controlpanel.pt:83
 msgid "Address:"
 msgstr ""
 
-#: ../browser/portlet.py:214
+#: ../browser/portlet.py:211
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr ""
 
-#: ../browser/portlet.py:57
+#: ../browser/portlet.py:56
 msgid "Archive link"
 msgstr ""
 
@@ -62,28 +58,28 @@ msgstr ""
 msgid "Base url to redirect to"
 msgstr ""
 
-#: ../browser/controlpanel.pt:95
+#: ../browser/controlpanel.pt:91
 msgid "City:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:83
+#: ../browser/controlpanel.pt:79
 msgid "Company:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:99
+#: ../browser/controlpanel.pt:95
 msgid "Country:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:117
+#: ../browser/controlpanel.pt:113
 msgid "Date created"
 msgstr ""
 
-#: ../browser/portlet.py:45
+#: ../browser/portlet.py:44
 #: ../browser/redirection_portlet.py:41
 msgid "Description of the rendered portlet"
 msgstr ""
 
-#: ../browser/portlet.py:143
+#: ../browser/portlet.py:146
 msgid "Edit Sendinblue Portlet"
 msgstr ""
 
@@ -91,21 +87,21 @@ msgstr ""
 msgid "Edit redirect Sendinblue Portlet"
 msgstr ""
 
-#: ../browser/portlet.py:167
+#: ../browser/portlet.py:171
 #: ../browser/redirection_portlet.py:144
 #: ../interfaces.py:17
 msgid "Email address"
 msgstr ""
 
-#: ../browser/controlpanel.pt:71
+#: ../browser/controlpanel.pt:67
 msgid "Email:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:75
+#: ../browser/controlpanel.pt:71
 msgid "First name:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:114
+#: ../browser/controlpanel.pt:110
 msgid "ID"
 msgstr ""
 
@@ -113,23 +109,19 @@ msgstr ""
 msgid "Key"
 msgstr ""
 
-#: ../browser/controlpanel.pt:79
+#: ../browser/controlpanel.pt:75
 msgid "Last name:"
 msgstr ""
 
-#: ../browser/portlet.py:58
+#: ../browser/portlet.py:57
 msgid "Link to a page where you store previous newsletters"
 msgstr ""
 
-#: ../browser/portlet.py:50
+#: ../browser/portlet.py:49
 msgid "List"
 msgstr ""
 
-#: ../browser/controlpanel.pt:57
-msgid "Mail plan:"
-msgstr ""
-
-#: ../browser/controlpanel.pt:115
+#: ../browser/controlpanel.pt:111
 msgid "Name"
 msgstr ""
 
@@ -137,25 +129,25 @@ msgstr ""
 msgid "Others informations and descriptions"
 msgstr ""
 
-#: ../browser/portlet.py:189
+#: ../browser/controlpanel.pt:55
+msgid "Plans:"
+msgstr ""
+
+#: ../browser/portlet.py:192
 msgid "Please check the captcha to prove you're a human"
 msgstr ""
 
-#: ../browser/portlet.py:44
+#: ../browser/portlet.py:43
 #: ../browser/redirection_portlet.py:40
 msgid "Portlet description"
 msgstr ""
 
-#: ../browser/portlet.py:38
+#: ../browser/portlet.py:37
 #: ../browser/redirection_portlet.py:34
 msgid "Portlet header"
 msgstr ""
 
-#: ../browser/controlpanel.pt:64
-msgid "SMS plan:"
-msgstr ""
-
-#: ../browser/portlet.py:51
+#: ../browser/portlet.py:50
 msgid "Select list to enable subscriptions to"
 msgstr ""
 
@@ -163,7 +155,7 @@ msgstr ""
 msgid "Sendinblue"
 msgstr ""
 
-#: ../interfaces.py:70
+#: ../interfaces.py:62
 msgid "Sendinblue API Key(s)"
 msgstr ""
 
@@ -171,7 +163,7 @@ msgstr ""
 msgid "Sendinblue Account(s)"
 msgstr ""
 
-#: ../browser/controlpanel.pt:108
+#: ../browser/controlpanel.pt:104
 msgid "Sendinblue Lists"
 msgstr ""
 
@@ -195,7 +187,7 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: ../browser/portlet.py:179
+#: ../browser/portlet.py:183
 #: ../browser/redirection_portlet.py:151
 msgid "Subscribe"
 msgstr ""
@@ -208,24 +200,24 @@ msgstr ""
 msgid "This portlet displays a redirect form to a Sendinblue list subscribe form."
 msgstr ""
 
-#: ../browser/portlet.py:121
+#: ../browser/portlet.py:123
 msgid "This portlet displays a subscription form for a Sendinblue newsletter."
 msgstr ""
 
-#: ../browser/portlet.py:39
+#: ../browser/portlet.py:38
 #: ../browser/redirection_portlet.py:35
 msgid "Title of the rendered portlet"
 msgstr ""
 
-#: ../browser/controlpanel.pt:116
+#: ../browser/controlpanel.pt:112
 msgid "Total subscribers"
 msgstr ""
 
-#: ../browser/portlet.py:64
+#: ../browser/portlet.py:63
 msgid "Use a captcha to protect your subscription form against robots"
 msgstr ""
 
-#: ../browser/portlet.py:63
+#: ../browser/portlet.py:62
 msgid "Use captcha"
 msgstr ""
 
@@ -233,11 +225,11 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: ../browser/portlet.py:208
+#: ../browser/portlet.py:205
 msgid "You are successfully subscribed to the newsletter !"
 msgstr ""
 
-#: ../browser/controlpanel.pt:91
+#: ../browser/controlpanel.pt:87
 msgid "Zip:"
 msgstr ""
 
@@ -251,7 +243,7 @@ msgid "collective.sendinblue"
 msgstr ""
 
 #. Default: "Enter in your Sendinblue key here. If you have several Sendinblue accounts, you can enter one key per line. Log into https://account.sendinblue.com/advanced/api and copy the API Key to this field."
-#: ../interfaces.py:71
+#: ../interfaces.py:63
 msgid "help_api_keys"
 msgstr ""
 
