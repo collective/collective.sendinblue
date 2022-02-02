@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendinblue\n"
-"POT-Creation-Date: 2022-02-02 16:49+0000\n"
+"POT-Creation-Date: 2022-02-02 17:02+0000\n"
 "PO-Revision-Date: 2014-05-06 11:41+0000\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,10 +70,6 @@ msgstr "Société:"
 #: ../browser/controlpanel.pt:95
 msgid "Country:"
 msgstr "Pays:"
-
-#: ../browser/controlpanel.pt:113
-msgid "Date created"
-msgstr "Date de création"
 
 #: ../browser/portlet.py:44
 #: ../browser/redirection_portlet.py:41

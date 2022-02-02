@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.sendinblue 1.0\n"
-"POT-Creation-Date: 2022-02-02 16:49+0000\n"
+"POT-Creation-Date: 2022-02-02 17:02+0000\n"
 "PO-Revision-Date: 2020-05-03 02:57-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -74,10 +74,6 @@ msgstr "Compañía:"
 #: ../browser/controlpanel.pt:95
 msgid "Country:"
 msgstr "País:"
-
-#: ../browser/controlpanel.pt:113
-msgid "Date created"
-msgstr "Fecha de creación"
 
 #: ../browser/portlet.py:44
 #: ../browser/redirection_portlet.py:41
