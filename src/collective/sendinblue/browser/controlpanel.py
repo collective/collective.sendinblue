@@ -12,14 +12,14 @@ from collective.sendinblue import _
 from collective.sendinblue.interfaces import ISendinblueAPI
 from collective.sendinblue.interfaces import ISendinblueSettings
 
-logger = logging.getLogger('collective.sendinblue')
+logger = logging.getLogger("collective.sendinblue")
 
 
 class SendinblueSettingsEditForm(controlpanel.RegistryEditForm):
 
     schema = ISendinblueSettings
-    label = _(u"Sendinblue settings")
-    description = _(u"Sendinblue integration for Plone")
+    label = _("Sendinblue settings")
+    description = _("Sendinblue integration for Plone")
 
     def update(self):
         self.updateCache()
@@ -32,7 +32,7 @@ class SendinblueSettingsEditForm(controlpanel.RegistryEditForm):
 
 class SendinblueSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
     form = SendinblueSettingsEditForm
-    index = ViewPageTemplateFile('controlpanel.pt')
+    index = ViewPageTemplateFile("controlpanel.pt")
 
     def sendinblue_accounts(self):
         if IDisableCSRFProtection is not None:
@@ -41,8 +41,9 @@ class SendinblueSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
         try:
             return sendinblue.accounts()
         except ApiException as error:
-            logger.error("Could not fetch account(s) details from " +
-                         "Sendinblue : %s" % error)
+            logger.error(
+                "Could not fetch account(s) details from " + "Sendinblue : %s" % error
+            )
 
     def sendinblue_lists(self):
         if IDisableCSRFProtection is not None:
@@ -51,5 +52,6 @@ class SendinblueSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
         try:
             return sendinblue.lists()
         except ApiException as error:
-            logger.error("Could not fetch lists details from " +
-                         "Sendinblue : %s" % error)
+            logger.error(
+                "Could not fetch lists details from " + "Sendinblue : %s" % error
+            )

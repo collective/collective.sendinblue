@@ -9,16 +9,17 @@ class TestSetup(unittest.TestCase):
     layer = COLLECTIVE_SENDINBLUE_INTEGRATION_TESTING
 
     def setUp(self):
-        self.portal = self.layer['portal']
-        self.request = self.layer['request']
+        self.portal = self.layer["portal"]
+        self.request = self.layer["request"]
 
     def test_browserlayer_available(self):
         from plone.browserlayer import utils
         from collective.sendinblue.interfaces import ICollectiveSendinblueLayer
+
         self.failUnless(ICollectiveSendinblueLayer in utils.registered_layers())
 
     def test_sendinblue_css_available(self):
-        css_url = '++resource++collective.sendinblue.stylesheets/sendinblue.css'
+        css_url = "++resource++collective.sendinblue.stylesheets/sendinblue.css"
         self.assertIsNotNone(self.portal.restrictedTraverse(css_url))
 
 

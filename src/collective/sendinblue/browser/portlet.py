@@ -28,52 +28,53 @@ from collective.sendinblue.interfaces import INewsletterSubscribe
 from collective.sendinblue.interfaces import ISendinblueAPI
 
 
-logger = logging.getLogger('collective.sendinblue')
+logger = logging.getLogger("collective.sendinblue")
 
 
 class ISendinbluePortlet(IPortletDataProvider):
 
     header = schema.TextLine(
-        title=_(u"Portlet header"),
-        description=_(u"Title of the rendered portlet"),
-        required=True
+        title=_("Portlet header"),
+        description=_("Title of the rendered portlet"),
+        required=True,
     )
 
     description = schema.TextLine(
-        title=_(u"Portlet description"),
-        description=_(u"Description of the rendered portlet"),
-        required=False
+        title=_("Portlet description"),
+        description=_("Description of the rendered portlet"),
+        required=False,
     )
 
     newsletter_list = schema.Choice(
-        title=_(u'List'),
-        description=_(u'Select list to enable subscriptions to'),
+        title=_("List"),
+        description=_("Select list to enable subscriptions to"),
         required=True,
-        vocabulary='collective.sendinblue.vocabularies.AvailableLists'
+        vocabulary="collective.sendinblue.vocabularies.AvailableLists",
     )
 
     archive_url = schema.TextLine(
-        title=_(u"Archive link"),
-        description=_(u"Link to a page where you store previous newsletters"),
-        required=False
+        title=_("Archive link"),
+        description=_("Link to a page where you store previous newsletters"),
+        required=False,
     )
 
     use_captcha = schema.Bool(
-        title=_(u"Use captcha"),
-        description=_(u"Use a captcha to protect your subscription form against robots"),
-        default=True
+        title=_("Use captcha"),
+        description=_("Use a captcha to protect your subscription form against robots"),
+        default=True,
     )
 
 
 @implementer(ISendinbluePortlet)
 class Assignment(base.Assignment):
-
-    def __init__(self,
-                 header=u'',
-                 description=u'',
-                 newsletter_list=u'',
-                 archive_url=u'',
-                 use_captcha=True):
+    def __init__(
+        self,
+        header="",
+        description="",
+        newsletter_list="",
+        archive_url="",
+        use_captcha=True,
+    ):
         self.header = header
         self.description = description
         self.newsletter_list = newsletter_list
@@ -86,7 +87,7 @@ class Assignment(base.Assignment):
 
 
 class Renderer(base.Renderer):
-    _template = ViewPageTemplateFile('portlet.pt')
+    _template = ViewPageTemplateFile("portlet.pt")
     form = None
 
     def __init__(self, *args):
@@ -107,7 +108,9 @@ class Renderer(base.Renderer):
     def update(self):
         super(Renderer, self).update()
         z2.switch_on(self, request_layer=IFormLayer)
-        self.form = PortletSubscribeForm(aq_inner(self.context), self.request, self.data)
+        self.form = PortletSubscribeForm(
+            aq_inner(self.context), self.request, self.data
+        )
         alsoProvides(self.form, IWrappedForm)
         self.form.update()
 
@@ -116,9 +119,10 @@ class AddForm(base.AddForm):
 
     schema = ISendinbluePortlet
 
-    label = _(u"Add Sendinblue Portlet")
+    label = _("Add Sendinblue Portlet")
     description = _(
-        u"This portlet displays a subscription form for a Sendinblue newsletter.")
+        "This portlet displays a subscription form for a Sendinblue newsletter."
+    )
 
     def update(self):
         sendinblue = getUtility(ISendinblueAPI)
@@ -127,11 +131,11 @@ class AddForm(base.AddForm):
 
     def create(self, data):
         return Assignment(
-            header=data.get('header', u''),
-            description=data.get('description', u''),
-            newsletter_list=data.get('newsletter_list', u''),
-            archive_url=data.get('archive_url', u''),
-            use_captcha=data.get('use_captcha', True),
+            header=data.get("header", ""),
+            description=data.get("description", ""),
+            newsletter_list=data.get("newsletter_list", ""),
+            archive_url=data.get("archive_url", ""),
+            use_captcha=data.get("use_captcha", True),
         )
 
 
@@ -139,9 +143,10 @@ class EditForm(base.EditForm):
 
     schema = ISendinbluePortlet
 
-    label = _(u"Edit Sendinblue Portlet")
+    label = _("Edit Sendinblue Portlet")
     description = _(
-        u"This portlet displays a subscription form for a Sendinblue newsletter.")
+        "This portlet displays a subscription form for a Sendinblue newsletter."
+    )
 
     def update(self):
         sendinblue = getUtility(ISendinblueAPI)
@@ -150,8 +155,8 @@ class EditForm(base.EditForm):
 
 
 class Captcha(object):
-    subject = u""
-    captcha = u""
+    subject = ""
+    captcha = ""
 
     def __init__(self, context):
         self.context = context
@@ -160,10 +165,10 @@ class Captcha(object):
 class PortletSubscribeForm(Form):
     fields = field.Fields(INewsletterSubscribe)
     ignoreContext = True
-    fields['captcha'].widgetFactory = ReCaptchaFieldWidget
+    fields["captcha"].widgetFactory = ReCaptchaFieldWidget
     fields["email"].widgetFactory = ParameterizedWidget(
         None,
-        placeholder=_(u"Email address"),
+        placeholder=_("Email address"),
     )
 
     def __init__(self, context, request, data=None):
@@ -175,38 +180,37 @@ class PortletSubscribeForm(Form):
             self.fields = self.fields.omit("captcha")
         super(PortletSubscribeForm, self).update()
 
-    @button.buttonAndHandler(_('Subscribe'), name='subscribe')
+    @button.buttonAndHandler(_("Subscribe"), name="subscribe")
     def handle_subscribe(self, action):
         if self.data.use_captcha:
             captcha = getMultiAdapter(
-                (aq_inner(self.data), self.request),
-                name='recaptcha'
+                (aq_inner(self.data), self.request), name="recaptcha"
             )
             if not captcha.verify():
                 raise WidgetActionExecutionError(
-                    'captcha',
-                    Invalid(_(u"Please check the captcha to prove you're a human"))
+                    "captcha",
+                    Invalid(_("Please check the captcha to prove you're a human")),
                 )
 
         data, errors = self.extractData()
         if errors:
             return
 
-        email = data.get('email')
-        account_id, list_id = self.data.newsletter_list.split('|')
+        email = data.get("email")
+        account_id, list_id = self.data.newsletter_list.split("|")
         sendinblue = getUtility(ISendinblueAPI)
         success = sendinblue.subscribe(account_id, list_id, email)
         if success:
             api.portal.show_message(
-                _(u'You are successfully subscribed to the newsletter !'),
+                _("You are successfully subscribed to the newsletter !"),
                 request=self.request,
-                type='info',
+                type="info",
             )
         else:
             api.portal.show_message(
-                _(u'An error occured while triyng to subscribe to the newsletter'),
+                _("An error occured while triyng to subscribe to the newsletter"),
                 request=self.request,
-                type='error',
+                type="error",
             )
         url = self.request.ACTUAL_URL
         self.request.response.redirect(url)

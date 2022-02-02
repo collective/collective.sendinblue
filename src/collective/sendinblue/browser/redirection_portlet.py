@@ -31,33 +31,33 @@ logger = logging.getLogger("collective.sendinblue")
 class IRedirectionSendinbluePortlet(IPortletDataProvider):
 
     header = schema.TextLine(
-        title=_(u"Portlet header"),
-        description=_(u"Title of the rendered portlet"),
+        title=_("Portlet header"),
+        description=_("Title of the rendered portlet"),
         required=True,
     )
 
     description = schema.TextLine(
-        title=_(u"Portlet description"),
-        description=_(u"Description of the rendered portlet"),
+        title=_("Portlet description"),
+        description=_("Description of the rendered portlet"),
         required=False,
     )
 
     url = schema.TextLine(
-        title=_(u"Base url to redirect to"),
-        description=_(u"Base url of the registration form to redirect to"),
+        title=_("Base url to redirect to"),
+        description=_("Base url of the registration form to redirect to"),
         required=True,
     )
 
     text = RichText(
-        title=_(u"Text"),
-        description=_(u"Others informations and descriptions"),
+        title=_("Text"),
+        description=_("Others informations and descriptions"),
         required=False,
     )
 
 
 @implementer(IRedirectionSendinbluePortlet)
 class Assignment(base.Assignment):
-    def __init__(self, header=u"", description=u"", text=u"", url=u""):
+    def __init__(self, header="", description="", text="", url=""):
         self.header = header
         self.description = description
 
@@ -102,9 +102,9 @@ class AddForm(base.AddForm):
 
     schema = IRedirectionSendinbluePortlet
 
-    label = _(u"Add redirect Sendinblue Portlet")
+    label = _("Add redirect Sendinblue Portlet")
     description = _(
-        u"This portlet displays a redirect form to a Sendinblue list subscribe form."
+        "This portlet displays a redirect form to a Sendinblue list subscribe form."
     )
 
     def update(self):
@@ -114,10 +114,10 @@ class AddForm(base.AddForm):
 
     def create(self, data):
         return Assignment(
-            header=data.get("header", u""),
-            description=data.get("description", u""),
-            text=data.get("text", u""),
-            url=data.get("url", u""),
+            header=data.get("header", ""),
+            description=data.get("description", ""),
+            text=data.get("text", ""),
+            url=data.get("url", ""),
         )
 
 
@@ -125,9 +125,9 @@ class EditForm(base.EditForm):
 
     schema = IRedirectionSendinbluePortlet
 
-    label = _(u"Edit redirect Sendinblue Portlet")
+    label = _("Edit redirect Sendinblue Portlet")
     description = _(
-        u"This portlet displays a redirect form to a Sendinblue list subscribe form."
+        "This portlet displays a redirect form to a Sendinblue list subscribe form."
     )
 
     def update(self):
@@ -141,7 +141,7 @@ class PortletSubscribeForm(Form):
     ignoreContext = True
     fields["email"].widgetFactory = ParameterizedWidget(
         None,
-        placeholder=_(u"Email address"),
+        placeholder=_("Email address"),
     )
 
     def __init__(self, context, request, data=None):

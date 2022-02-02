@@ -11,7 +11,7 @@ from collective.sendinblue.interfaces import ISendinblueAPI
 from collective.sendinblue.interfaces import ISendinblueSettings
 
 _marker = object()
-logger = logging.getLogger('collective.sendinblue')
+logger = logging.getLogger("collective.sendinblue")
 
 
 @implementer(ISendinblueAPI)
@@ -37,7 +37,7 @@ class SendinblueAPI(object):
     def connect(self, api_key):
         """Create client"""
         configuration = sib_api_v3_sdk.Configuration()
-        configuration.api_key['api-key'] = api_key
+        configuration.api_key["api-key"] = api_key
         client = sib_api_v3_sdk.ApiClient(configuration)
         return client
 
@@ -58,7 +58,7 @@ class SendinblueAPI(object):
             try:
                 response = api_list.get_lists()
                 for listinfo in response.lists:
-                    list_id = listinfo.get('id')
+                    list_id = listinfo.get("id")
                     listdata = api_list.get_list(list_id)
                     if api_key in lists:
                         lists[api_key].append(listdata)

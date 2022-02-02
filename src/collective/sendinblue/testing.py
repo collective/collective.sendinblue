@@ -20,7 +20,7 @@ class CollectiveSendinblueLayer(PloneSandboxLayer):
         self.loadZCML(package=collective.sendinblue)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.sendinblue:default')
+        applyProfile(portal, "collective.sendinblue:default")
 
 
 COLLECTIVE_SENDINBLUE_FIXTURE = CollectiveSendinblueLayer()
@@ -28,11 +28,11 @@ COLLECTIVE_SENDINBLUE_FIXTURE = CollectiveSendinblueLayer()
 
 COLLECTIVE_SENDINBLUE_INTEGRATION_TESTING = IntegrationTesting(
     bases=(COLLECTIVE_SENDINBLUE_FIXTURE,),
-    name='CollectiveSendinblueLayer:IntegrationTesting'
+    name="CollectiveSendinblueLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_SENDINBLUE_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_SENDINBLUE_FIXTURE,),
-    name='CollectiveSendinblueLayer:FunctionalTesting'
+    name="CollectiveSendinblueLayer:FunctionalTesting",
 )

@@ -14,29 +14,21 @@ class ICollectiveSendinblueLayer(IDefaultBrowserLayer):
 class INewsletterSubscribe(Interface):
 
     email = schema.Email(
-        title=_(u"Email address"),
-        description=_(
-            u"help_email",
-            default=u"Please enter your email address."
-        ),
-        required=True)
-
-    captcha = schema.TextLine(
-        title=u"Captcha",
-        description=u"",
-        required=False
+        title=_("Email address"),
+        description=_("help_email", default="Please enter your email address."),
+        required=True,
     )
+
+    captcha = schema.TextLine(title="Captcha", description="", required=False)
 
 
 class INewsletterRedirectionSubscribe(Interface):
 
     email = schema.Email(
-        title=_(u"Email address"),
-        description=_(
-            u"help_email",
-            default=u"Please enter your email address."
-        ),
-        required=True)
+        title=_("Email address"),
+        description=_("help_email", default="Please enter your email address."),
+        required=True,
+    )
 
 
 class ISendinblueAPI(Interface):
@@ -67,15 +59,15 @@ class ISendinblueSettings(Interface):
     """
 
     api_keys = schema.List(
-        title=_(u"Sendinblue API Key(s)"),
+        title=_("Sendinblue API Key(s)"),
         description=_(
-            u"help_api_keys",
-            default=u"Enter in your Sendinblue key here. If you have several" +
-                    u" Sendinblue accounts, you can enter one key per line." +
-                    u" Log into https://account.sendinblue.com/advanced/api" +
-                    u" and copy the API Key to this field."
+            "help_api_keys",
+            default="Enter in your Sendinblue key here. If you have several"
+            + " Sendinblue accounts, you can enter one key per line."
+            + " Log into https://account.sendinblue.com/advanced/api"
+            + " and copy the API Key to this field.",
         ),
-        value_type=schema.TextLine(title=_(u"API Key")),
+        value_type=schema.TextLine(title=_("API Key")),
         default=[],
-        required=True
+        required=True,
     )
