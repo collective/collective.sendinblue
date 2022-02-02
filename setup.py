@@ -30,7 +30,7 @@ setup(
     keywords='Python Plone',
     author='Laurent Lasudry',
     author_email='laurent.lasudry@affinitic.be',
-    url='https://pypi.python.org/pypi/collective.sendinblue',
+    url='https://github.com/collective/collective.sendinblue',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['collective'],
