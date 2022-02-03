@@ -8,24 +8,19 @@
 
 <body>
 
-  <div id="content"
-     metal:fill-slot="prefs_configlet_content">
+<div metal:fill-slot="prefs_configlet_main">
 
-    <div metal:use-macro="context/global_statusmessage/macros/portal_message">
+  <div metal:use-macro="context/global_statusmessage/macros/portal_message">
       Portal status message
-    </div>
+  </div>
 
-    <a href=""
-       id="setup-link"
-       tal:attributes="href string:$portal_url/plone_control_panel"
-       i18n:translate="">
-        Site Setup
-    </a> &rsaquo;
+  <div class="configlet">
 
     <h1 class="documentFirstHeading" tal:content="view/label">View Title</h1>
 
     <div id="layout-contents"
-         class="enableUnloadProtection enableAutoFocus enableFormTabbing enableUnlockProtection"
+         class="enableUnloadProtection enableAutoFocus enableFormTabbing enableUnlockProtection pat-autotoc"
+         data-pat-autotoc="levels: legend; section: fieldset; className: autotabs"
          tal:define="accounts view/sendinblue_accounts|nothing;
                      empty string:-">
       <fieldset id="fieldset-send">
@@ -128,12 +123,14 @@
       </fieldset>
     </div>
 
-    <script type="text/javascript">
-// Disable inline validation.  It may change the cache based on a new
-// api key that the user has not yet saved.
-$('.z3cformInlineValidation').removeClass('z3cformInlineValidation');
-    </script>
-
   </div>
+
+  <script type="text/javascript">
+    // Disable inline validation.  It may change the cache based on a new
+    // api key that the user has not yet saved.
+    $('.z3cformInlineValidation').removeClass('z3cformInlineValidation');
+  </script>
+
+</div>
 </body>
 </html>
