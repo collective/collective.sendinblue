@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendinblue\n"
-"POT-Creation-Date: 2022-02-02 17:02+0000\n"
+"POT-Creation-Date: 2022-02-03 08:21+0000\n"
 "PO-Revision-Date: 2016-03-30 11:42+0100\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.sendinblue\n"
 
-#: ../browser/controlpanel.pt:61
+#: ../browser/controlpanel.pt:56
 msgid "${plan_type} &mdash; credits : ${plan_credits} (${plan_credits_type})"
 msgstr ""
 
@@ -22,11 +22,11 @@ msgstr ""
 msgid "API Key"
 msgstr ""
 
-#: ../browser/controlpanel.pt:109
+#: ../browser/controlpanel.pt:104
 msgid "Account"
 msgstr ""
 
-#: ../browser/controlpanel.pt:51
+#: ../browser/controlpanel.pt:46
 msgid "Account key:"
 msgstr ""
 
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Add redirect Sendinblue Portlet"
 msgstr ""
 
-#: ../browser/controlpanel.pt:83
+#: ../browser/controlpanel.pt:78
 msgid "Address:"
 msgstr ""
 
@@ -58,15 +58,15 @@ msgstr ""
 msgid "Base url to redirect to"
 msgstr ""
 
-#: ../browser/controlpanel.pt:91
+#: ../browser/controlpanel.pt:86
 msgid "City:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:79
+#: ../browser/controlpanel.pt:74
 msgid "Company:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:95
+#: ../browser/controlpanel.pt:90
 msgid "Country:"
 msgstr ""
 
@@ -89,23 +89,23 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: ../browser/controlpanel.pt:67
+#: ../browser/controlpanel.pt:62
 msgid "Email:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:71
+#: ../browser/controlpanel.pt:66
 msgid "First name:"
 msgstr ""
 
-#: ../browser/controlpanel.pt:110
+#: ../browser/controlpanel.pt:105
 msgid "ID"
 msgstr ""
 
-#: ../browser/controlpanel.pt:45
+#: ../browser/controlpanel.pt:40
 msgid "Key"
 msgstr ""
 
-#: ../browser/controlpanel.pt:75
+#: ../browser/controlpanel.pt:70
 msgid "Last name:"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: ../browser/controlpanel.pt:111
+#: ../browser/controlpanel.pt:106
 msgid "Name"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Others informations and descriptions"
 msgstr ""
 
-#: ../browser/controlpanel.pt:55
+#: ../browser/controlpanel.pt:50
 msgid "Plans:"
 msgstr ""
 
@@ -155,11 +155,11 @@ msgstr ""
 msgid "Sendinblue API Key(s)"
 msgstr ""
 
-#: ../browser/controlpanel.pt:40
+#: ../browser/controlpanel.pt:35
 msgid "Sendinblue Account(s)"
 msgstr ""
 
-#: ../browser/controlpanel.pt:104
+#: ../browser/controlpanel.pt:99
 msgid "Sendinblue Lists"
 msgstr ""
 
@@ -175,11 +175,7 @@ msgstr ""
 msgid "Sendinblue settings"
 msgstr ""
 
-#: ../browser/controlpanel.pt:18
-msgid "Site Setup"
-msgstr ""
-
-#: ../browser/controlpanel.pt:32
+#: ../browser/controlpanel.pt:27
 msgid "Standard"
 msgstr ""
 
@@ -205,7 +201,7 @@ msgstr ""
 msgid "Title of the rendered portlet"
 msgstr ""
 
-#: ../browser/controlpanel.pt:112
+#: ../browser/controlpanel.pt:107
 msgid "Total subscribers"
 msgstr ""
 
@@ -217,7 +213,7 @@ msgstr ""
 msgid "Use captcha"
 msgstr ""
 
-#: ../browser/controlpanel.pt:46
+#: ../browser/controlpanel.pt:41
 msgid "Value"
 msgstr ""
 
@@ -225,7 +221,7 @@ msgstr ""
 msgid "You are successfully subscribed to the newsletter !"
 msgstr ""
 
-#: ../browser/controlpanel.pt:87
+#: ../browser/controlpanel.pt:82
 msgid "Zip:"
 msgstr ""
 
@@ -249,6 +245,6 @@ msgid "help_email"
 msgstr ""
 
 #. Default: "You have no valid account linked to the site yet."
-#: ../browser/controlpanel.pt:33
+#: ../browser/controlpanel.pt:28
 msgid "msg_sendinblue_no_account"
 msgstr ""

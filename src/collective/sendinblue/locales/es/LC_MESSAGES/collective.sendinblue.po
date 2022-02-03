@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.sendinblue 1.0\n"
-"POT-Creation-Date: 2022-02-02 17:02+0000\n"
+"POT-Creation-Date: 2022-02-03 08:21+0000\n"
 "PO-Revision-Date: 2020-05-03 02:57-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
-#: ../browser/controlpanel.pt:61
+#: ../browser/controlpanel.pt:56
 msgid "${plan_type} &mdash; credits : ${plan_credits} (${plan_credits_type})"
 msgstr ""
 
@@ -27,11 +27,11 @@ msgstr ""
 msgid "API Key"
 msgstr "Clave API"
 
-#: ../browser/controlpanel.pt:109
+#: ../browser/controlpanel.pt:104
 msgid "Account"
 msgstr "Cuenta"
 
-#: ../browser/controlpanel.pt:51
+#: ../browser/controlpanel.pt:46
 msgid "Account key:"
 msgstr "Clave de cuenta:"
 
@@ -43,7 +43,7 @@ msgstr "Añadir Portlet Sendinblue"
 msgid "Add redirect Sendinblue Portlet"
 msgstr "Añadir redireccionamiento de Portlet Sendinblue"
 
-#: ../browser/controlpanel.pt:83
+#: ../browser/controlpanel.pt:78
 msgid "Address:"
 msgstr "Dirección:"
 
@@ -63,15 +63,15 @@ msgstr "URL base del formulario de registro para redirigir"
 msgid "Base url to redirect to"
 msgstr "URL base para redirigir"
 
-#: ../browser/controlpanel.pt:91
+#: ../browser/controlpanel.pt:86
 msgid "City:"
 msgstr "Ciudad:"
 
-#: ../browser/controlpanel.pt:79
+#: ../browser/controlpanel.pt:74
 msgid "Company:"
 msgstr "Compañía:"
 
-#: ../browser/controlpanel.pt:95
+#: ../browser/controlpanel.pt:90
 msgid "Country:"
 msgstr "País:"
 
@@ -94,23 +94,23 @@ msgstr "Editar redireccionamiento de Portlet Sendinblue"
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
 
-#: ../browser/controlpanel.pt:67
+#: ../browser/controlpanel.pt:62
 msgid "Email:"
 msgstr "Correo electrónico:"
 
-#: ../browser/controlpanel.pt:71
+#: ../browser/controlpanel.pt:66
 msgid "First name:"
 msgstr "Nombre:"
 
-#: ../browser/controlpanel.pt:110
+#: ../browser/controlpanel.pt:105
 msgid "ID"
 msgstr "ID"
 
-#: ../browser/controlpanel.pt:45
+#: ../browser/controlpanel.pt:40
 msgid "Key"
 msgstr "Clave"
 
-#: ../browser/controlpanel.pt:75
+#: ../browser/controlpanel.pt:70
 msgid "Last name:"
 msgstr "Apellido:"
 
@@ -122,7 +122,7 @@ msgstr "Enlace a una página donde almacena boletines anteriores"
 msgid "List"
 msgstr "Lista"
 
-#: ../browser/controlpanel.pt:111
+#: ../browser/controlpanel.pt:106
 msgid "Name"
 msgstr "Nombre"
 
@@ -130,7 +130,7 @@ msgstr "Nombre"
 msgid "Others informations and descriptions"
 msgstr "Otras informaciones y descripciones"
 
-#: ../browser/controlpanel.pt:55
+#: ../browser/controlpanel.pt:50
 msgid "Plans:"
 msgstr ""
 
@@ -160,11 +160,11 @@ msgstr "Sendinblue"
 msgid "Sendinblue API Key(s)"
 msgstr "Clave(s) de API Sendinblue"
 
-#: ../browser/controlpanel.pt:40
+#: ../browser/controlpanel.pt:35
 msgid "Sendinblue Account(s)"
 msgstr "Cuenta(s) Sendinblue"
 
-#: ../browser/controlpanel.pt:104
+#: ../browser/controlpanel.pt:99
 msgid "Sendinblue Lists"
 msgstr "Listas Sendinblue"
 
@@ -180,11 +180,7 @@ msgstr "Integración de Sendinblue para Plone."
 msgid "Sendinblue settings"
 msgstr "Configuraciones Sendinblue"
 
-#: ../browser/controlpanel.pt:18
-msgid "Site Setup"
-msgstr "Configuración del Sitio"
-
-#: ../browser/controlpanel.pt:32
+#: ../browser/controlpanel.pt:27
 msgid "Standard"
 msgstr "Configuración"
 
@@ -210,7 +206,7 @@ msgstr "Este portlet muestra un formulario de suscripción para un boletín de S
 msgid "Title of the rendered portlet"
 msgstr "Título que aparecerá en el portlet"
 
-#: ../browser/controlpanel.pt:112
+#: ../browser/controlpanel.pt:107
 msgid "Total subscribers"
 msgstr "Número total de suscriptores"
 
@@ -222,7 +218,7 @@ msgstr ""
 msgid "Use captcha"
 msgstr ""
 
-#: ../browser/controlpanel.pt:46
+#: ../browser/controlpanel.pt:41
 msgid "Value"
 msgstr "Valor"
 
@@ -230,7 +226,7 @@ msgstr "Valor"
 msgid "You are successfully subscribed to the newsletter !"
 msgstr "¡Estás suscrito al boletín!"
 
-#: ../browser/controlpanel.pt:87
+#: ../browser/controlpanel.pt:82
 msgid "Zip:"
 msgstr "Código postal:"
 
@@ -254,6 +250,6 @@ msgid "help_email"
 msgstr "Por favor, ingrese su dirección de correo electrónico."
 
 #. Default: "You have no valid account linked to the site yet."
-#: ../browser/controlpanel.pt:33
+#: ../browser/controlpanel.pt:28
 msgid "msg_sendinblue_no_account"
 msgstr "No tiene una cuenta válida vinculada al sitio en este momento."
