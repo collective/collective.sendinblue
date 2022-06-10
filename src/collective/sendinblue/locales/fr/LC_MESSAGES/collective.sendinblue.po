@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../browser/controlpanel.pt:61
 msgid "${plan_type} &mdash; credits : ${plan_credits} (${plan_credits_type})"
-msgstr ""
+msgstr "${plan_type} &mdash; crédits : ${plan_credits} (${plan_credits_type})"
 
 #: ../interfaces.py:78
 msgid "API Key"
@@ -105,7 +105,7 @@ msgstr "Nom"
 
 #: ../browser/controlpanel.pt:55
 msgid "Plans:"
-msgstr ""
+msgstr "Plans:"
 
 #: ../browser/portlet.py:175
 msgid "Please check the captcha to prove you're a human"
@@ -141,7 +141,7 @@ msgstr "Listes Sendinblue"
 
 #: ../configure.zcml:20
 msgid "Sendinblue integration for Plone."
-msgstr ""
+msgstr "Intégration de Sendinblue pour Plone."
 
 #: ../browser/controlpanel.py:21
 msgid "Sendinblue settings"
@@ -149,7 +149,7 @@ msgstr "Paramètres Sendinblue"
 
 #: ../browser/controlpanel.pt:18
 msgid "Site Setup"
-msgstr ""
+msgstr "Configuration du site"
 
 #: ../browser/controlpanel.pt:32
 msgid "Standard"
