@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.5 (unreleased)
+1.0.5 (2022-06-10)
 ------------------
 
 - Migrate to Sendinblue API v3 (#4)
