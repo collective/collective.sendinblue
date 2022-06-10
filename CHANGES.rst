@@ -5,7 +5,9 @@ Changelog
 1.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Migrate to Sendinblue API v3 (#4)
+  Warning: old api keys will be cleared (because v2 keys are not compatible)
+  [laulaz]
 
 
 1.0.4 (2020-01-29)

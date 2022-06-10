@@ -22,11 +22,11 @@ def available_lists(context):
             account_id = key
             account_infos = accounts.get(account_id)
             if account_infos:
-                company = account_infos[2].get('company', '')
-                title = u" — ".join([company, listinfos.get('name', '')])
+                company = account_infos.company_name
+                title = u" — ".join([company, listinfos.name])
             else:
-                title = listinfos.get('name', '')
-            value = u"%s-%s" % (account_id, listinfos['id'])
+                title = listinfos.name
+            value = u"%s|%s" % (account_id, listinfos.id)
             terms.append(
                 SimpleTerm(value=value, title=title)
             )

@@ -15,3 +15,11 @@ def install_recaptcha(context):
 def update_cache(context):
     sendinblue = getUtility(ISendinblueAPI)
     sendinblue.updateCache()
+
+
+def remove_old_api_keys(context):
+    api.portal.set_registry_record(
+        name="collective.sendinblue.interfaces.ISendinblueSettings.api_keys",
+        value=[]
+    )
+    update_cache(context)

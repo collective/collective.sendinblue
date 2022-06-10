@@ -46,58 +46,54 @@
                 <th i18n:translate="">Value</th>
               </tr>
             </thead>
-            <tbody tal:define="mail_plan python: account[0];
-                               sms_plan python: account[1];
-                               account_details python: account[2]">
+            <tbody tal:define="plans account/plan">
               <tr>
                  <td i18n:translate="">Account key:</td>
                  <td tal:content="key|empty"/>
               </tr>
               <tr>
-                 <td i18n:translate="">Mail plan:</td>
+                 <td i18n:translate="">Plans:</td>
                  <td>
-                     <span tal:replace="mail_plan/plan_type|empty"/> &mdash; 
-                     credits : <span tal:replace="mail_plan/credits|empty"/> (<span tal:replace="mail_plan/credit_type|empty"/>)
-                 </td>
-              </tr>
-              <tr>
-                 <td i18n:translate="">SMS plan:</td>
-                 <td>
-                     <span tal:replace="sms_plan/plan_type|empty"/> &mdash; 
-                     credits : <span tal:replace="sms_plan/credits|empty"/> (<span tal:replace="sms_plan/credit_type|empty"/>)
+                   <ul>
+                     <li tal:repeat="plan plans"
+                         i18n:translate="">
+                       <span tal:replace="plan/type|empty" i18n:name="plan_type" /> &mdash;
+                       credits : <span tal:replace="plan/credits|empty" i18n:name="plan_credits" /> (<span tal:replace="plan/credits_type|empty" i18n:name="plan_credits_type" />)
+                     </li>
+                   </ul>
                  </td>
               </tr>
               <tr>
                  <td i18n:translate="">Email:</td>
-                 <td tal:content="account_details/email|empty"/>
+                 <td tal:content="account/email|empty"/>
               </tr>
               <tr>
                  <td i18n:translate="">First name:</td>
-                 <td tal:content="account_details/first_name|empty"/>
+                 <td tal:content="account/first_name|empty"/>
               </tr>
               <tr>
                  <td i18n:translate="">Last name:</td>
-                 <td tal:content="account_details/last_name|empty"/>
+                 <td tal:content="account/last_name|empty"/>
               </tr>
               <tr>
                 <td i18n:translate="">Company: </td>
-                <td tal:content="account_details/company|empty"/>
+                <td tal:content="account/company_name|empty"/>
               </tr>
               <tr>
                 <td i18n:translate="">Address: </td>
-                <td tal:content="account_details/address|empty"/>
+                <td tal:content="account/address/street|empty"/>
               </tr>
               <tr>
                 <td i18n:translate="">Zip: </td>
-                <td tal:content="account_details/zip_code|empty"/>
+                <td tal:content="account/address/zip_code|empty"/>
               </tr>
               <tr>
                  <td i18n:translate="">City: </td>
-                <td tal:content="account_details/city|empty"/>
+                <td tal:content="account/address/city|empty"/>
               </tr>
               <tr>
                 <td i18n:translate="">Country: </td>
-                <td tal:content="account_details/country|empty"/>
+                <td tal:content="account/address/country|empty"/>
               </tr>
              </tbody>
           </table>
@@ -114,7 +110,6 @@
               <th i18n:translate="">ID</th>
               <th i18n:translate="">Name</th>
               <th i18n:translate="">Total subscribers</th>
-              <th i18n:translate="">Date created</th>
             </tr>
           </thead>
           <tal:bcl tal:repeat="key lists_infos">
@@ -125,7 +120,6 @@
                 <td tal:content="list/id|empty"></td>
                 <td tal:content="list/name|empty"></td>
                 <td tal:content="list/total_subscribers|empty"></td>
-                <td tal:content="list/entered|empty"></td>
               </tr>
             </tbody>
           </tal:bcl>

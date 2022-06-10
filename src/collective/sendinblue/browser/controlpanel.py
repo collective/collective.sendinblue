@@ -3,12 +3,12 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.registry.browser import controlpanel
 from plone.protect.interfaces import IDisableCSRFProtection
+from sib_api_v3_sdk.rest import ApiException
 from zope.component import getUtility
 from zope.interface import alsoProvides
 import logging
 
 from collective.sendinblue import _
-from collective.sendinblue.exceptions import SendinblueException
 from collective.sendinblue.interfaces import ISendinblueAPI
 from collective.sendinblue.interfaces import ISendinblueSettings
 
@@ -40,7 +40,7 @@ class SendinblueSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
         sendinblue = getUtility(ISendinblueAPI)
         try:
             return sendinblue.accounts()
-        except SendinblueException, error:
+        except ApiException, error:
             logger.error("Could not fetch account(s) details from " +
                          "Sendinblue : %s" % error.message)
 
@@ -50,6 +50,6 @@ class SendinblueSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
         sendinblue = getUtility(ISendinblueAPI)
         try:
             return sendinblue.lists()
-        except SendinblueException, error:
+        except ApiException, error:
             logger.error("Could not fetch lists details from " +
                          "Sendinblue : %s" % error.message)
