@@ -5,7 +5,8 @@ Changelog
 2.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix typo in French
+  [remdub]
 
 
 2.0.2 (2022-02-03)
