@@ -45,7 +45,7 @@ msgstr "Adresse:"
 
 #: ../browser/portlet.py:211
 msgid "An error occured while triyng to subscribe to the newsletter"
-msgstr "Une erreur est survenur lors de l'inscription à la newsletter"
+msgstr "Une erreur est survenue lors de l'inscription à la newsletter"
 
 #: ../browser/portlet.py:56
 msgid "Archive link"
