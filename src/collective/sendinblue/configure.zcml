@@ -46,6 +46,15 @@
       handler=".upgrades.remove_old_api_keys"
       />
 
+  <genericsetup:upgradeDepends
+      source="1003"
+      destination="1004"
+      title="Reload registry to add double opt-in fields"
+      profile="collective.sendinblue:default"
+      import_profile="collective.sendinblue:default"
+      import_steps="plone.app.registry"
+      />
+
   <utility
       provides="collective.sendinblue.interfaces.ISendinblueAPI"
       factory=".sendinblue.SendinblueAPI" />

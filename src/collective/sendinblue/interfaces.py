@@ -71,3 +71,17 @@ class ISendinblueSettings(Interface):
         default=[],
         required=True,
     )
+
+    double_opt_in = schema.Bool(title=_("Double opt-in"), required=False, default=False)
+
+    template_id = schema.Int(
+        title=_("Template ID"),
+        description=_("Double opt-in only"),
+        required=False,
+    )
+
+    redirection_url = schema.URI(
+        title=_("Redirection URL"),
+        description=_("Double opt-in only"),
+        required=False,
+    )

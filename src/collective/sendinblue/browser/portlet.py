@@ -191,7 +191,6 @@ class PortletSubscribeForm(Form):
                     "captcha",
                     Invalid(_("Please check the captcha to prove you're a human")),
                 )
-
         data, errors = self.extractData()
         if errors:
             return
