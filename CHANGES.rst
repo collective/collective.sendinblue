@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.3 (unreleased)
+2.0.3 (2022-10-24)
 ------------------
 
 - Handle double opt-in
