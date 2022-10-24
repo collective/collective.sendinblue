@@ -199,17 +199,14 @@ class PortletSubscribeForm(Form):
         account_id, list_id = self.data.newsletter_list.split("|")
         sendinblue = getUtility(ISendinblueAPI)
         success = sendinblue.subscribe(account_id, list_id, email)
-        if success:
-            api.portal.show_message(
-                _("You are successfully subscribed to the newsletter !"),
-                request=self.request,
-                type="info",
-            )
+        msg_type = "info"
+        if success and sendinblue.double_opt_in is False:
+            msg = _("You are successfully subscribed to the newsletter !")
+        elif success and sendinblue.double_opt_in is True:
+            msg = _("Please check your e-mail to confirm your subscription !")
         else:
-            api.portal.show_message(
-                _("An error occured while triyng to subscribe to the newsletter"),
-                request=self.request,
-                type="error",
-            )
+            msg = _("An error occured while triyng to subscribe to the newsletter")
+            msg_type = "error"
+        api.portal.show_message(msg, request=self.request, type=msg_type)
         url = self.request.ACTUAL_URL
         self.request.response.redirect(url)
