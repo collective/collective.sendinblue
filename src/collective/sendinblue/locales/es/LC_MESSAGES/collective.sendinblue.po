@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.sendinblue 1.0\n"
-"POT-Creation-Date: 2022-02-03 08:21+0000\n"
+"POT-Creation-Date: 2022-10-24 13:02+0000\n"
 "PO-Revision-Date: 2020-05-03 02:57-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr "Añadir redireccionamiento de Portlet Sendinblue"
 msgid "Address:"
 msgstr "Dirección:"
 
-#: ../browser/portlet.py:211
+#: ../browser/portlet.py:208
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr "Se produjo un error durante la suscripción al boletín"
 
@@ -79,6 +79,14 @@ msgstr "País:"
 #: ../browser/redirection_portlet.py:41
 msgid "Description of the rendered portlet"
 msgstr "Descripción que aparecerá en el portlet"
+
+#: ../interfaces.py:75
+msgid "Double opt-in"
+msgstr ""
+
+#: ../interfaces.py:79
+msgid "Double opt-in only"
+msgstr ""
 
 #: ../browser/portlet.py:146
 msgid "Edit Sendinblue Portlet"
@@ -138,6 +146,10 @@ msgstr ""
 msgid "Please check the captcha to prove you're a human"
 msgstr "Haga clic en el CAPTCHA para demostrar que no es un robot"
 
+#: ../browser/portlet.py:206
+msgid "Please check your e-mail to confirm your subscription !"
+msgstr ""
+
 #: ../browser/portlet.py:43
 #: ../browser/redirection_portlet.py:40
 msgid "Portlet description"
@@ -147,6 +159,10 @@ msgstr "Descripción del portlet"
 #: ../browser/redirection_portlet.py:34
 msgid "Portlet header"
 msgstr "Título del portlet"
+
+#: ../interfaces.py:84
+msgid "Redirection URL"
+msgstr ""
 
 #: ../browser/portlet.py:50
 msgid "Select list to enable subscriptions to"
@@ -189,6 +205,10 @@ msgstr "Configuración"
 msgid "Subscribe"
 msgstr "Inscribirse"
 
+#: ../interfaces.py:78
+msgid "Template ID"
+msgstr ""
+
 #: ../browser/redirection_portlet.py:52
 msgid "Text"
 msgstr "Texto"
@@ -222,7 +242,7 @@ msgstr ""
 msgid "Value"
 msgstr "Valor"
 
-#: ../browser/portlet.py:205
+#: ../browser/portlet.py:204
 msgid "You are successfully subscribed to the newsletter !"
 msgstr "¡Estás suscrito al boletín!"
 

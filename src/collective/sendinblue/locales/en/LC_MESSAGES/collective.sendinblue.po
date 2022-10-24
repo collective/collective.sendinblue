@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sendinblue\n"
-"POT-Creation-Date: 2022-02-03 08:21+0000\n"
+"POT-Creation-Date: 2022-10-24 13:02+0000\n"
 "PO-Revision-Date: 2016-03-30 11:42+0100\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Address:"
 msgstr ""
 
-#: ../browser/portlet.py:211
+#: ../browser/portlet.py:208
 msgid "An error occured while triyng to subscribe to the newsletter"
 msgstr ""
 
@@ -73,6 +73,14 @@ msgstr ""
 #: ../browser/portlet.py:44
 #: ../browser/redirection_portlet.py:41
 msgid "Description of the rendered portlet"
+msgstr ""
+
+#: ../interfaces.py:75
+msgid "Double opt-in"
+msgstr ""
+
+#: ../interfaces.py:79
+msgid "Double opt-in only"
 msgstr ""
 
 #: ../browser/portlet.py:146
@@ -133,6 +141,10 @@ msgstr ""
 msgid "Please check the captcha to prove you're a human"
 msgstr ""
 
+#: ../browser/portlet.py:206
+msgid "Please check your e-mail to confirm your subscription !"
+msgstr ""
+
 #: ../browser/portlet.py:43
 #: ../browser/redirection_portlet.py:40
 msgid "Portlet description"
@@ -141,6 +153,10 @@ msgstr ""
 #: ../browser/portlet.py:37
 #: ../browser/redirection_portlet.py:34
 msgid "Portlet header"
+msgstr ""
+
+#: ../interfaces.py:84
+msgid "Redirection URL"
 msgstr ""
 
 #: ../browser/portlet.py:50
@@ -184,6 +200,10 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
+#: ../interfaces.py:78
+msgid "Template ID"
+msgstr ""
+
 #: ../browser/redirection_portlet.py:52
 msgid "Text"
 msgstr ""
@@ -217,7 +237,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: ../browser/portlet.py:205
+#: ../browser/portlet.py:204
 msgid "You are successfully subscribed to the newsletter !"
 msgstr ""
 

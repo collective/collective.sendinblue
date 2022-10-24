@@ -5,6 +5,9 @@ Changelog
 2.0.3 (unreleased)
 ------------------
 
+- Handle double opt-in
+  [boulch, laz]
+
 - Fix typo in French
   [remdub]
 

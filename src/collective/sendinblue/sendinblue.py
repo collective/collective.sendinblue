@@ -4,6 +4,7 @@ from plone.registry.interfaces import IRegistry
 from sib_api_v3_sdk.rest import ApiException
 from zope.component import getUtility
 from zope.interface import implementer
+import json
 import logging
 import sib_api_v3_sdk
 
@@ -24,6 +25,7 @@ class SendinblueAPI(object):
     def __init__(self):
         self.registry = None
         self.settings = None
+        self.client = None
         self.api_keys = []
 
     def initialize(self):
@@ -33,13 +35,17 @@ class SendinblueAPI(object):
         if self.settings is None:
             self.settings = self.registry.forInterface(ISendinblueSettings)
         self.api_keys = self.settings.api_keys
+        self.double_opt_in = self.settings.double_opt_in
+        self.template_id = self.settings.template_id
+        self.redirection_url = self.settings.redirection_url
 
     def connect(self, api_key):
         """Create client"""
         configuration = sib_api_v3_sdk.Configuration()
         configuration.api_key["api-key"] = api_key
         client = sib_api_v3_sdk.ApiClient(configuration)
-        return client
+        self.client = client
+        return self.client
 
     def lists(self):
         """Retrieves lists (cached)"""
@@ -72,22 +78,61 @@ class SendinblueAPI(object):
         """API call to create a contact and subscribe it to a list"""
         self.initialize()
         client = self.connect(account_id)
+        list_id = int(list_id)
         api_contact = sib_api_v3_sdk.ContactsApi(client)
-        user = sib_api_v3_sdk.CreateContact(email=email_address)
+        must_create_contact = False
         try:
-            api_contact.create_contact(user)
-        except ApiException:
-            logger.exception("Exception creating user %s" % email_address)
-            return
+            api_response = api_contact.get_contact_info(email_address)
+        except ApiException as e:
+            response = json.loads(e.body)
+            code = response.get("code")
+            if e.status == 404 and code == "document_not_found":
+                must_create_contact = True
+            else:
+                logger.exception("Exception getting contact details for %s" % email_address)
+                return False
+        if must_create_contact:
+            return self.create_contact(email_address, list_id)
+        else:
+            return self.add_existing_contact_to_list(email_address, list_id)
 
-        api_lists = sib_api_v3_sdk.ListsApi(client)
+    def create_contact(self, email_address, list_id):
+        api_contact = sib_api_v3_sdk.ContactsApi(self.client)
+        if self.double_opt_in:
+            user = sib_api_v3_sdk.CreateDoiContact(
+                email=email_address,
+                include_list_ids=[list_id],
+                template_id=self.template_id,
+                redirection_url=self.redirection_url,
+            )
+            try:
+                api_contact.create_doi_contact(user)
+            except ApiException:
+                logger.exception("Exception creating double opt-in user %s" % email_address)
+                return False
+        else:
+            user = sib_api_v3_sdk.CreateContact(email=email_address, list_ids=[list_id])
+            try:
+                api_contact.create_contact(user)
+            except ApiException:
+                logger.exception("Exception creating user %s" % email_address)
+                return False
+        return True
+
+    def add_existing_contact_to_list(self, email_address, list_id):
+        api_lists = sib_api_v3_sdk.ListsApi(self.client)
         user_in_list = sib_api_v3_sdk.AddContactToList()
         user_in_list.emails = [email_address]
         try:
             response = api_lists.add_contact_to_list(list_id, user_in_list)
-        except ApiException:
-            logger.exception("Exception subscribing %s" % email_address)
-            return
+        except ApiException as e:
+            response = json.loads(e.body)
+            code = response.get("code")
+            if e.status == 400 and code == "invalid_parameter":
+                # contact already in list
+                return True
+            logger.exception("Exception subscribing %s to list %s" % (email_address, list_id))
+            return False
         if len(response.contacts.success) == 1:
             return True
         else:
