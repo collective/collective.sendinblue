@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../interfaces.py:79
 msgid "Double opt-in only"
-msgstr ""
+msgstr "Uniquement pour le double opt-in"
 
 #: ../browser/portlet.py:146
 msgid "Edit Sendinblue Portlet"
@@ -144,7 +144,7 @@ msgstr "Veuillez cliquer sur le captcha pour prouver que vous n'êtes pas un rob
 
 #: ../browser/portlet.py:206
 msgid "Please check your e-mail to confirm your subscription !"
-msgstr ""
+msgstr "Veuillez vérifier vos e-mails pour confirmer votre inscription !"
 
 #: ../browser/portlet.py:43
 #: ../browser/redirection_portlet.py:40
@@ -158,7 +158,7 @@ msgstr "Titre du portlet"
 
 #: ../interfaces.py:84
 msgid "Redirection URL"
-msgstr ""
+msgstr "URL de redirection"
 
 #: ../browser/portlet.py:50
 msgid "Select list to enable subscriptions to"
@@ -203,7 +203,7 @@ msgstr "S'inscrire"
 
 #: ../interfaces.py:78
 msgid "Template ID"
-msgstr ""
+msgstr "Identifiant du modèle"
 
 #: ../browser/redirection_portlet.py:52
 msgid "Text"
@@ -263,7 +263,7 @@ msgstr "Entrez votre clé Sendinblue ici. Si vous avez plusieurs comptes Sendinb
 #. Default: "Please enter your email address."
 #: ../interfaces.py:18
 msgid "help_email"
-msgstr "Veuillez entrer votre adresse email."
+msgstr "Veuillez entrer votre adresse e-mail."
 
 #. Default: "You have no valid account linked to the site yet."
 #: ../browser/controlpanel.pt:28
