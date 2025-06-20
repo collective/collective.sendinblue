@@ -5,7 +5,8 @@ Changelog
 2.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add uninstall profile (Plone6)
+  [boulch]
 
 
 2.0.3 (2022-10-24)

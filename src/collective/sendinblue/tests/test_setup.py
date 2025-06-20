@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from collective.sendinblue.interfaces import ICollectiveSendinblueLayer
 from collective.sendinblue.testing import COLLECTIVE_SENDINBLUE_INTEGRATION_TESTING
-import unittest
+from plone.browserlayer import utils
 
+import unittest
+        
+        
 
 class TestSetup(unittest.TestCase):
 
@@ -13,10 +17,10 @@ class TestSetup(unittest.TestCase):
         self.request = self.layer["request"]
 
     def test_browserlayer_available(self):
-        from plone.browserlayer import utils
-        from collective.sendinblue.interfaces import ICollectiveSendinblueLayer
-
-        self.failUnless(ICollectiveSendinblueLayer in utils.registered_layers())
+        try:
+            self.failUnless(ICollectiveSendinblueLayer in utils.registered_layers())
+        except:
+            self.assertTrue(ICollectiveSendinblueLayer in utils.registered_layers())
 
     def test_sendinblue_css_available(self):
         css_url = "++resource++collective.sendinblue.stylesheets/sendinblue.css"
