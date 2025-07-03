@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.4 (unreleased)
+2.0.4 (2025-07-03)
 ------------------
 
 - Add uninstall profile (Plone6)
